@@ -1,0 +1,904 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E534ED7209080B300FD8609 /* HLMapTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E534ED5209080B200FD8609 /* HLMapTypeTableViewCell.m */; };
+		4E534ED8209080B300FD8609 /* HLMapTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E534ED6209080B200FD8609 /* HLMapTypeTableViewCell.xib */; };
+		4E95E1432072003500E82B66 /* HLOneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E95E1422072003500E82B66 /* HLOneVC.m */; };
+		4E95E14620720A4000E82B66 /* HLTwoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E95E14520720A4000E82B66 /* HLTwoVC.m */; };
+		4E95E14920720A5000E82B66 /* HLThreeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E95E14820720A5000E82B66 /* HLThreeVC.m */; };
+		4E95E14C20720A6600E82B66 /* HLFourVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E95E14B20720A6600E82B66 /* HLFourVC.m */; };
+		4E95E14F20720E7700E82B66 /* HLBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E95E14E20720E7700E82B66 /* HLBaseTableView.m */; };
+		4E95E15220720E8700E82B66 /* HLBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E95E15120720E8700E82B66 /* HLBaseView.m */; };
+		4E95E162207220B000E82B66 /* GaoDeToBaiDuMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E95E161207220B000E82B66 /* GaoDeToBaiDuMap.m */; };
+		4EB2A8E42085EF1300939D38 /* HLHHRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2A8E32085EF1300939D38 /* HLHHRouter.m */; };
+		4EB2A8F32085FC4D00939D38 /* HLPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2A8F22085FC4D00939D38 /* HLPayVC.m */; };
+		4EB2A8F7208F21E600939D38 /* HLGaoDeCoverAgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2A8F5208F21E600939D38 /* HLGaoDeCoverAgeViewController.m */; };
+		4EB2A8F8208F21E600939D38 /* HLGaoDeCoverAgeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB2A8F6208F21E600939D38 /* HLGaoDeCoverAgeViewController.xib */; };
+		4ECB202B2071C2CA00102D02 /* HLLittleDreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB202A2071C2CA00102D02 /* HLLittleDreamTests.m */; };
+		4ECB20362071C2CA00102D02 /* HLLittleDreamUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB20352071C2CA00102D02 /* HLLittleDreamUITests.m */; };
+		4ECB20502071C32000102D02 /* HLLittleDream.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB20442071C32000102D02 /* HLLittleDream.xcdatamodeld */; };
+		4ECB20512071C32000102D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ECB20472071C32000102D02 /* Assets.xcassets */; };
+		4ECB20522071C32000102D02 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB20482071C32000102D02 /* ViewController.m */; };
+		4ECB20532071C32000102D02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECB20492071C32000102D02 /* LaunchScreen.storyboard */; };
+		4ECB20542071C32000102D02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECB204B2071C32000102D02 /* Main.storyboard */; };
+		4ECB20552071C32000102D02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB204D2071C32000102D02 /* main.m */; };
+		4ECB20562071C32000102D02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB204E2071C32000102D02 /* AppDelegate.m */; };
+		4ECB20662071CBDB00102D02 /* HLBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB20652071CBDB00102D02 /* HLBaseTableViewController.m */; };
+		4ECB20692071CBFB00102D02 /* HLBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB20682071CBFB00102D02 /* HLBaseCollectionViewController.m */; };
+		4ECB206C2071CC2100102D02 /* HLBaseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB206B2071CC2100102D02 /* HLBaseScrollView.m */; };
+		4ECB206F2071CC4000102D02 /* HLBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB206E2071CC4000102D02 /* HLBaseTabBarController.m */; };
+		4ECB20722071CC5F00102D02 /* HLBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB20712071CC5F00102D02 /* HLBaseNavigationController.m */; };
+		4ECB20752071CC9F00102D02 /* HLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB20742071CC9F00102D02 /* HLTabBarController.m */; };
+		4ECB20782071CCC200102D02 /* HLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB20772071CCC200102D02 /* HLNavigationController.m */; };
+		4ECB20872071D16000102D02 /* HLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB20862071D16000102D02 /* HLBaseViewController.m */; };
+		C6BEEFD53BEFEC7BB71498C4 /* libPods-HLLittleDream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F25D4545E84D8608C650937 /* libPods-HLLittleDream.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4ECB20272071C2CA00102D02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4ECB20032071C2C900102D02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ECB200A2071C2C900102D02;
+			remoteInfo = HLLittleDream;
+		};
+		4ECB20322071C2CA00102D02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4ECB20032071C2C900102D02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ECB200A2071C2C900102D02;
+			remoteInfo = HLLittleDream;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F25D4545E84D8608C650937 /* libPods-HLLittleDream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HLLittleDream.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E534ED4209080B200FD8609 /* HLMapTypeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLMapTypeTableViewCell.h; sourceTree = "<group>"; };
+		4E534ED5209080B200FD8609 /* HLMapTypeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLMapTypeTableViewCell.m; sourceTree = "<group>"; };
+		4E534ED6209080B200FD8609 /* HLMapTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HLMapTypeTableViewCell.xib; sourceTree = "<group>"; };
+		4E95E1402071FFB400E82B66 /* HL_PCH_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HL_PCH_Header.h; sourceTree = "<group>"; };
+		4E95E1412072003500E82B66 /* HLOneVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLOneVC.h; sourceTree = "<group>"; };
+		4E95E1422072003500E82B66 /* HLOneVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLOneVC.m; sourceTree = "<group>"; };
+		4E95E14420720A4000E82B66 /* HLTwoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLTwoVC.h; sourceTree = "<group>"; };
+		4E95E14520720A4000E82B66 /* HLTwoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLTwoVC.m; sourceTree = "<group>"; };
+		4E95E14720720A5000E82B66 /* HLThreeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLThreeVC.h; sourceTree = "<group>"; };
+		4E95E14820720A5000E82B66 /* HLThreeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLThreeVC.m; sourceTree = "<group>"; };
+		4E95E14A20720A6600E82B66 /* HLFourVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLFourVC.h; sourceTree = "<group>"; };
+		4E95E14B20720A6600E82B66 /* HLFourVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLFourVC.m; sourceTree = "<group>"; };
+		4E95E14D20720E7700E82B66 /* HLBaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLBaseTableView.h; sourceTree = "<group>"; };
+		4E95E14E20720E7700E82B66 /* HLBaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLBaseTableView.m; sourceTree = "<group>"; };
+		4E95E15020720E8700E82B66 /* HLBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLBaseView.h; sourceTree = "<group>"; };
+		4E95E15120720E8700E82B66 /* HLBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLBaseView.m; sourceTree = "<group>"; };
+		4E95E160207220B000E82B66 /* GaoDeToBaiDuMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaoDeToBaiDuMap.h; sourceTree = "<group>"; };
+		4E95E161207220B000E82B66 /* GaoDeToBaiDuMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaoDeToBaiDuMap.m; sourceTree = "<group>"; };
+		4EB2A8E22085EF1300939D38 /* HLHHRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLHHRouter.h; sourceTree = "<group>"; };
+		4EB2A8E32085EF1300939D38 /* HLHHRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLHHRouter.m; sourceTree = "<group>"; };
+		4EB2A8E52085EF8800939D38 /* HHRouterHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHRouterHeader.h; sourceTree = "<group>"; };
+		4EB2A8F12085FC4D00939D38 /* HLPayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLPayVC.h; sourceTree = "<group>"; };
+		4EB2A8F22085FC4D00939D38 /* HLPayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLPayVC.m; sourceTree = "<group>"; };
+		4EB2A8F4208F21E600939D38 /* HLGaoDeCoverAgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLGaoDeCoverAgeViewController.h; sourceTree = "<group>"; };
+		4EB2A8F5208F21E600939D38 /* HLGaoDeCoverAgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLGaoDeCoverAgeViewController.m; sourceTree = "<group>"; };
+		4EB2A8F6208F21E600939D38 /* HLGaoDeCoverAgeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HLGaoDeCoverAgeViewController.xib; sourceTree = "<group>"; };
+		4ECB200B2071C2C900102D02 /* HLLittleDream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLLittleDream.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ECB201F2071C2CA00102D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ECB20262071C2CA00102D02 /* HLLittleDreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLLittleDreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ECB202A2071C2CA00102D02 /* HLLittleDreamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLLittleDreamTests.m; sourceTree = "<group>"; };
+		4ECB202C2071C2CA00102D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ECB20312071C2CA00102D02 /* HLLittleDreamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLLittleDreamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ECB20352071C2CA00102D02 /* HLLittleDreamUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLLittleDreamUITests.m; sourceTree = "<group>"; };
+		4ECB20372071C2CA00102D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ECB20452071C32000102D02 /* HLLittleDream.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HLLittleDream.xcdatamodel; sourceTree = "<group>"; };
+		4ECB20462071C32000102D02 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4ECB20472071C32000102D02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4ECB20482071C32000102D02 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4ECB204A2071C32000102D02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4ECB204C2071C32000102D02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4ECB204D2071C32000102D02 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4ECB204E2071C32000102D02 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4ECB204F2071C32000102D02 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4ECB20602071CA6900102D02 /* HLPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLPrefixHeader.pch; sourceTree = "<group>"; };
+		4ECB20642071CBDB00102D02 /* HLBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLBaseTableViewController.h; sourceTree = "<group>"; };
+		4ECB20652071CBDB00102D02 /* HLBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLBaseTableViewController.m; sourceTree = "<group>"; };
+		4ECB20672071CBFB00102D02 /* HLBaseCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLBaseCollectionViewController.h; sourceTree = "<group>"; };
+		4ECB20682071CBFB00102D02 /* HLBaseCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLBaseCollectionViewController.m; sourceTree = "<group>"; };
+		4ECB206A2071CC2100102D02 /* HLBaseScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLBaseScrollView.h; sourceTree = "<group>"; };
+		4ECB206B2071CC2100102D02 /* HLBaseScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLBaseScrollView.m; sourceTree = "<group>"; };
+		4ECB206D2071CC4000102D02 /* HLBaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLBaseTabBarController.h; sourceTree = "<group>"; };
+		4ECB206E2071CC4000102D02 /* HLBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLBaseTabBarController.m; sourceTree = "<group>"; };
+		4ECB20702071CC5F00102D02 /* HLBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLBaseNavigationController.h; sourceTree = "<group>"; };
+		4ECB20712071CC5F00102D02 /* HLBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLBaseNavigationController.m; sourceTree = "<group>"; };
+		4ECB20732071CC9F00102D02 /* HLTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLTabBarController.h; sourceTree = "<group>"; };
+		4ECB20742071CC9F00102D02 /* HLTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLTabBarController.m; sourceTree = "<group>"; };
+		4ECB20762071CCC200102D02 /* HLNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLNavigationController.h; sourceTree = "<group>"; };
+		4ECB20772071CCC200102D02 /* HLNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLNavigationController.m; sourceTree = "<group>"; };
+		4ECB20852071D16000102D02 /* HLBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLBaseViewController.h; sourceTree = "<group>"; };
+		4ECB20862071D16000102D02 /* HLBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLBaseViewController.m; sourceTree = "<group>"; };
+		7C20A69B74331DE864DFF258 /* Pods-HLLittleDream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLLittleDream.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLLittleDream/Pods-HLLittleDream.release.xcconfig"; sourceTree = "<group>"; };
+		C9D2CC3CA2E12E8CA0628BD3 /* Pods-HLLittleDream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLLittleDream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLLittleDream/Pods-HLLittleDream.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4ECB20082071C2C900102D02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6BEEFD53BEFEC7BB71498C4 /* libPods-HLLittleDream.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ECB20232071C2CA00102D02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ECB202E2071C2CA00102D02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		128F0948D2A76A0A62E87DEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F25D4545E84D8608C650937 /* libPods-HLLittleDream.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33DC607FA4C6668139060C0F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9D2CC3CA2E12E8CA0628BD3 /* Pods-HLLittleDream.debug.xcconfig */,
+				7C20A69B74331DE864DFF258 /* Pods-HLLittleDream.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4E95E1592072205100E82B66 /* GaoDeToBaiDu */ = {
+			isa = PBXGroup;
+			children = (
+				4E95E160207220B000E82B66 /* GaoDeToBaiDuMap.h */,
+				4E95E161207220B000E82B66 /* GaoDeToBaiDuMap.m */,
+				4EB2A8F4208F21E600939D38 /* HLGaoDeCoverAgeViewController.h */,
+				4EB2A8F5208F21E600939D38 /* HLGaoDeCoverAgeViewController.m */,
+				4EB2A8F6208F21E600939D38 /* HLGaoDeCoverAgeViewController.xib */,
+				4E534ED4209080B200FD8609 /* HLMapTypeTableViewCell.h */,
+				4E534ED5209080B200FD8609 /* HLMapTypeTableViewCell.m */,
+				4E534ED6209080B200FD8609 /* HLMapTypeTableViewCell.xib */,
+			);
+			path = GaoDeToBaiDu;
+			sourceTree = "<group>";
+		};
+		4EB2A8E12085EF0000939D38 /* HHRouter */ = {
+			isa = PBXGroup;
+			children = (
+				4EB2A8E22085EF1300939D38 /* HLHHRouter.h */,
+				4EB2A8E32085EF1300939D38 /* HLHHRouter.m */,
+			);
+			path = HHRouter;
+			sourceTree = "<group>";
+		};
+		4EB2A8F02085FBD300939D38 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				4EB2A8F12085FC4D00939D38 /* HLPayVC.h */,
+				4EB2A8F22085FC4D00939D38 /* HLPayVC.m */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		4ECB20022071C2C900102D02 = {
+			isa = PBXGroup;
+			children = (
+				4ECB200D2071C2C900102D02 /* HLLittleDream */,
+				4ECB20292071C2CA00102D02 /* HLLittleDreamTests */,
+				4ECB20342071C2CA00102D02 /* HLLittleDreamUITests */,
+				4ECB200C2071C2C900102D02 /* Products */,
+				33DC607FA4C6668139060C0F /* Pods */,
+				128F0948D2A76A0A62E87DEF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4ECB200C2071C2C900102D02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4ECB200B2071C2C900102D02 /* HLLittleDream.app */,
+				4ECB20262071C2CA00102D02 /* HLLittleDreamTests.xctest */,
+				4ECB20312071C2CA00102D02 /* HLLittleDreamUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4ECB200D2071C2C900102D02 /* HLLittleDream */ = {
+			isa = PBXGroup;
+			children = (
+				4ECB20582071C54E00102D02 /* Base */,
+				4ECB205A2071C54E00102D02 /* Main */,
+				4ECB205B2071C54F00102D02 /* Others */,
+				4ECB20592071C54E00102D02 /* Third */,
+				4ECB20572071C4F200102D02 /* HLClass */,
+				4ECB20432071C32000102D02 /* SupportFile */,
+				4ECB201F2071C2CA00102D02 /* Info.plist */,
+			);
+			path = HLLittleDream;
+			sourceTree = "<group>";
+		};
+		4ECB20292071C2CA00102D02 /* HLLittleDreamTests */ = {
+			isa = PBXGroup;
+			children = (
+				4ECB202A2071C2CA00102D02 /* HLLittleDreamTests.m */,
+				4ECB202C2071C2CA00102D02 /* Info.plist */,
+			);
+			path = HLLittleDreamTests;
+			sourceTree = "<group>";
+		};
+		4ECB20342071C2CA00102D02 /* HLLittleDreamUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4ECB20352071C2CA00102D02 /* HLLittleDreamUITests.m */,
+				4ECB20372071C2CA00102D02 /* Info.plist */,
+			);
+			path = HLLittleDreamUITests;
+			sourceTree = "<group>";
+		};
+		4ECB20432071C32000102D02 /* SupportFile */ = {
+			isa = PBXGroup;
+			children = (
+				4ECB20442071C32000102D02 /* HLLittleDream.xcdatamodeld */,
+				4ECB20462071C32000102D02 /* AppDelegate.h */,
+				4ECB204E2071C32000102D02 /* AppDelegate.m */,
+				4ECB20472071C32000102D02 /* Assets.xcassets */,
+				4ECB20482071C32000102D02 /* ViewController.m */,
+				4ECB20492071C32000102D02 /* LaunchScreen.storyboard */,
+				4ECB204B2071C32000102D02 /* Main.storyboard */,
+				4ECB204D2071C32000102D02 /* main.m */,
+				4ECB204F2071C32000102D02 /* ViewController.h */,
+				4ECB20602071CA6900102D02 /* HLPrefixHeader.pch */,
+			);
+			path = SupportFile;
+			sourceTree = "<group>";
+		};
+		4ECB20572071C4F200102D02 /* HLClass */ = {
+			isa = PBXGroup;
+			children = (
+				4ECB205F2071C6AA00102D02 /* One */,
+				4ECB205C2071C6AA00102D02 /* Two */,
+				4ECB205D2071C6AA00102D02 /* Three */,
+				4ECB205E2071C6AA00102D02 /* Four */,
+			);
+			path = HLClass;
+			sourceTree = "<group>";
+		};
+		4ECB20582071C54E00102D02 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4ECB20852071D16000102D02 /* HLBaseViewController.h */,
+				4ECB20862071D16000102D02 /* HLBaseViewController.m */,
+				4ECB20642071CBDB00102D02 /* HLBaseTableViewController.h */,
+				4ECB20652071CBDB00102D02 /* HLBaseTableViewController.m */,
+				4ECB20672071CBFB00102D02 /* HLBaseCollectionViewController.h */,
+				4ECB20682071CBFB00102D02 /* HLBaseCollectionViewController.m */,
+				4ECB206D2071CC4000102D02 /* HLBaseTabBarController.h */,
+				4ECB206E2071CC4000102D02 /* HLBaseTabBarController.m */,
+				4ECB20702071CC5F00102D02 /* HLBaseNavigationController.h */,
+				4ECB20712071CC5F00102D02 /* HLBaseNavigationController.m */,
+				4ECB206A2071CC2100102D02 /* HLBaseScrollView.h */,
+				4ECB206B2071CC2100102D02 /* HLBaseScrollView.m */,
+				4E95E14D20720E7700E82B66 /* HLBaseTableView.h */,
+				4E95E14E20720E7700E82B66 /* HLBaseTableView.m */,
+				4E95E15020720E8700E82B66 /* HLBaseView.h */,
+				4E95E15120720E8700E82B66 /* HLBaseView.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		4ECB20592071C54E00102D02 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				4EB2A8E12085EF0000939D38 /* HHRouter */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		4ECB205A2071C54E00102D02 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4ECB20732071CC9F00102D02 /* HLTabBarController.h */,
+				4ECB20742071CC9F00102D02 /* HLTabBarController.m */,
+				4ECB20762071CCC200102D02 /* HLNavigationController.h */,
+				4ECB20772071CCC200102D02 /* HLNavigationController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4ECB205B2071C54F00102D02 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				4E95E1402071FFB400E82B66 /* HL_PCH_Header.h */,
+				4EB2A8E52085EF8800939D38 /* HHRouterHeader.h */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		4ECB205C2071C6AA00102D02 /* Two */ = {
+			isa = PBXGroup;
+			children = (
+				4E95E14420720A4000E82B66 /* HLTwoVC.h */,
+				4E95E14520720A4000E82B66 /* HLTwoVC.m */,
+				4EB2A8F02085FBD300939D38 /* Pay */,
+			);
+			path = Two;
+			sourceTree = "<group>";
+		};
+		4ECB205D2071C6AA00102D02 /* Three */ = {
+			isa = PBXGroup;
+			children = (
+				4E95E14720720A5000E82B66 /* HLThreeVC.h */,
+				4E95E14820720A5000E82B66 /* HLThreeVC.m */,
+			);
+			path = Three;
+			sourceTree = "<group>";
+		};
+		4ECB205E2071C6AA00102D02 /* Four */ = {
+			isa = PBXGroup;
+			children = (
+				4E95E14A20720A6600E82B66 /* HLFourVC.h */,
+				4E95E14B20720A6600E82B66 /* HLFourVC.m */,
+			);
+			path = Four;
+			sourceTree = "<group>";
+		};
+		4ECB205F2071C6AA00102D02 /* One */ = {
+			isa = PBXGroup;
+			children = (
+				4E95E1412072003500E82B66 /* HLOneVC.h */,
+				4E95E1422072003500E82B66 /* HLOneVC.m */,
+				4E95E1592072205100E82B66 /* GaoDeToBaiDu */,
+			);
+			path = One;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4ECB200A2071C2C900102D02 /* HLLittleDream */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ECB203A2071C2CA00102D02 /* Build configuration list for PBXNativeTarget "HLLittleDream" */;
+			buildPhases = (
+				2738451FDB1ABEB7BF8916C8 /* [CP] Check Pods Manifest.lock */,
+				4ECB20072071C2C900102D02 /* Sources */,
+				4ECB20082071C2C900102D02 /* Frameworks */,
+				4ECB20092071C2C900102D02 /* Resources */,
+				FCA249D87740C9C52AC1D100 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HLLittleDream;
+			productName = HLLittleDream;
+			productReference = 4ECB200B2071C2C900102D02 /* HLLittleDream.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4ECB20252071C2CA00102D02 /* HLLittleDreamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ECB203D2071C2CA00102D02 /* Build configuration list for PBXNativeTarget "HLLittleDreamTests" */;
+			buildPhases = (
+				4ECB20222071C2CA00102D02 /* Sources */,
+				4ECB20232071C2CA00102D02 /* Frameworks */,
+				4ECB20242071C2CA00102D02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4ECB20282071C2CA00102D02 /* PBXTargetDependency */,
+			);
+			name = HLLittleDreamTests;
+			productName = HLLittleDreamTests;
+			productReference = 4ECB20262071C2CA00102D02 /* HLLittleDreamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4ECB20302071C2CA00102D02 /* HLLittleDreamUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ECB20402071C2CA00102D02 /* Build configuration list for PBXNativeTarget "HLLittleDreamUITests" */;
+			buildPhases = (
+				4ECB202D2071C2CA00102D02 /* Sources */,
+				4ECB202E2071C2CA00102D02 /* Frameworks */,
+				4ECB202F2071C2CA00102D02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4ECB20332071C2CA00102D02 /* PBXTargetDependency */,
+			);
+			name = HLLittleDreamUITests;
+			productName = HLLittleDreamUITests;
+			productReference = 4ECB20312071C2CA00102D02 /* HLLittleDreamUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4ECB20032071C2C900102D02 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = HLRen;
+				TargetAttributes = {
+					4ECB200A2071C2C900102D02 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					4ECB20252071C2CA00102D02 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 4ECB200A2071C2C900102D02;
+					};
+					4ECB20302071C2CA00102D02 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 4ECB200A2071C2C900102D02;
+					};
+				};
+			};
+			buildConfigurationList = 4ECB20062071C2C900102D02 /* Build configuration list for PBXProject "HLLittleDream" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4ECB20022071C2C900102D02;
+			productRefGroup = 4ECB200C2071C2C900102D02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4ECB200A2071C2C900102D02 /* HLLittleDream */,
+				4ECB20252071C2CA00102D02 /* HLLittleDreamTests */,
+				4ECB20302071C2CA00102D02 /* HLLittleDreamUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4ECB20092071C2C900102D02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECB20542071C32000102D02 /* Main.storyboard in Resources */,
+				4E534ED8209080B300FD8609 /* HLMapTypeTableViewCell.xib in Resources */,
+				4ECB20512071C32000102D02 /* Assets.xcassets in Resources */,
+				4ECB20532071C32000102D02 /* LaunchScreen.storyboard in Resources */,
+				4EB2A8F8208F21E600939D38 /* HLGaoDeCoverAgeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ECB20242071C2CA00102D02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ECB202F2071C2CA00102D02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2738451FDB1ABEB7BF8916C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HLLittleDream-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCA249D87740C9C52AC1D100 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HLLittleDream/Pods-HLLittleDream-resources.sh",
+				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HLLittleDream/Pods-HLLittleDream-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4ECB20072071C2C900102D02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECB20562071C32000102D02 /* AppDelegate.m in Sources */,
+				4ECB20522071C32000102D02 /* ViewController.m in Sources */,
+				4E95E162207220B000E82B66 /* GaoDeToBaiDuMap.m in Sources */,
+				4ECB20662071CBDB00102D02 /* HLBaseTableViewController.m in Sources */,
+				4E95E1432072003500E82B66 /* HLOneVC.m in Sources */,
+				4ECB20782071CCC200102D02 /* HLNavigationController.m in Sources */,
+				4ECB20552071C32000102D02 /* main.m in Sources */,
+				4ECB206F2071CC4000102D02 /* HLBaseTabBarController.m in Sources */,
+				4ECB20692071CBFB00102D02 /* HLBaseCollectionViewController.m in Sources */,
+				4ECB20752071CC9F00102D02 /* HLTabBarController.m in Sources */,
+				4E534ED7209080B300FD8609 /* HLMapTypeTableViewCell.m in Sources */,
+				4E95E15220720E8700E82B66 /* HLBaseView.m in Sources */,
+				4E95E14F20720E7700E82B66 /* HLBaseTableView.m in Sources */,
+				4EB2A8F32085FC4D00939D38 /* HLPayVC.m in Sources */,
+				4EB2A8E42085EF1300939D38 /* HLHHRouter.m in Sources */,
+				4ECB206C2071CC2100102D02 /* HLBaseScrollView.m in Sources */,
+				4E95E14620720A4000E82B66 /* HLTwoVC.m in Sources */,
+				4E95E14920720A5000E82B66 /* HLThreeVC.m in Sources */,
+				4ECB20722071CC5F00102D02 /* HLBaseNavigationController.m in Sources */,
+				4ECB20502071C32000102D02 /* HLLittleDream.xcdatamodeld in Sources */,
+				4EB2A8F7208F21E600939D38 /* HLGaoDeCoverAgeViewController.m in Sources */,
+				4E95E14C20720A6600E82B66 /* HLFourVC.m in Sources */,
+				4ECB20872071D16000102D02 /* HLBaseViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ECB20222071C2CA00102D02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECB202B2071C2CA00102D02 /* HLLittleDreamTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ECB202D2071C2CA00102D02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECB20362071C2CA00102D02 /* HLLittleDreamUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4ECB20282071C2CA00102D02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ECB200A2071C2C900102D02 /* HLLittleDream */;
+			targetProxy = 4ECB20272071C2CA00102D02 /* PBXContainerItemProxy */;
+		};
+		4ECB20332071C2CA00102D02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ECB200A2071C2C900102D02 /* HLLittleDream */;
+			targetProxy = 4ECB20322071C2CA00102D02 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4ECB20492071C32000102D02 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4ECB204A2071C32000102D02 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4ECB204B2071C32000102D02 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4ECB204C2071C32000102D02 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4ECB20382071C2CA00102D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4ECB20392071C2CA00102D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4ECB203B2071C2CA00102D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9D2CC3CA2E12E8CA0628BD3 /* Pods-HLLittleDream.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2P5FN2G9KC;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HLLittleDream/SupportFile/HLPrefixHeader.pch";
+				INFOPLIST_FILE = HLLittleDream/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = HLR.HLLittleDream;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4ECB203C2071C2CA00102D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C20A69B74331DE864DFF258 /* Pods-HLLittleDream.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2P5FN2G9KC;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HLLittleDream/SupportFile/HLPrefixHeader.pch";
+				INFOPLIST_FILE = HLLittleDream/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = HLR.HLLittleDream;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4ECB203E2071C2CA00102D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6N9M5S46W5;
+				INFOPLIST_FILE = HLLittleDreamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = HLR.HLLittleDreamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HLLittleDream.app/HLLittleDream";
+			};
+			name = Debug;
+		};
+		4ECB203F2071C2CA00102D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6N9M5S46W5;
+				INFOPLIST_FILE = HLLittleDreamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = HLR.HLLittleDreamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HLLittleDream.app/HLLittleDream";
+			};
+			name = Release;
+		};
+		4ECB20412071C2CA00102D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6N9M5S46W5;
+				INFOPLIST_FILE = HLLittleDreamUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = HLR.HLLittleDreamUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HLLittleDream;
+			};
+			name = Debug;
+		};
+		4ECB20422071C2CA00102D02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6N9M5S46W5;
+				INFOPLIST_FILE = HLLittleDreamUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = HLR.HLLittleDreamUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HLLittleDream;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4ECB20062071C2C900102D02 /* Build configuration list for PBXProject "HLLittleDream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ECB20382071C2CA00102D02 /* Debug */,
+				4ECB20392071C2CA00102D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ECB203A2071C2CA00102D02 /* Build configuration list for PBXNativeTarget "HLLittleDream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ECB203B2071C2CA00102D02 /* Debug */,
+				4ECB203C2071C2CA00102D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ECB203D2071C2CA00102D02 /* Build configuration list for PBXNativeTarget "HLLittleDreamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ECB203E2071C2CA00102D02 /* Debug */,
+				4ECB203F2071C2CA00102D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ECB20402071C2CA00102D02 /* Build configuration list for PBXNativeTarget "HLLittleDreamUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ECB20412071C2CA00102D02 /* Debug */,
+				4ECB20422071C2CA00102D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4ECB20442071C32000102D02 /* HLLittleDream.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4ECB20452071C32000102D02 /* HLLittleDream.xcdatamodel */,
+			);
+			currentVersion = 4ECB20452071C32000102D02 /* HLLittleDream.xcdatamodel */;
+			path = HLLittleDream.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4ECB20032071C2C900102D02 /* Project object */;
+}
