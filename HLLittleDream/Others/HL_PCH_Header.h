@@ -12,6 +12,12 @@
 
 #endif /* HL_PCH_Header_h */
 
+
+
+
+//高德地图的Key
+#define AMapkey @"1a7f1f9106e1e8d0385816699879040a"
+
 //屏幕相关
 #define KScreenBounds [UIScreen mainScreen].bounds
 #define KScreenWidth [UIScreen mainScreen].bounds.size.width

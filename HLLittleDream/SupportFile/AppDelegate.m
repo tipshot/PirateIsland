@@ -22,7 +22,7 @@
     // Override point for customization after application launch.
     [self addTabBar];
     [self HHRouter];
-    [AMapServices sharedServices].apiKey = @"1a7f1f9106e1e8d0385816699879040a";
+    [AMapServices sharedServices].apiKey = AMapkey;
     return YES;
 }
 - (void)HHRouter

@@ -10,13 +10,19 @@
 #import <MAMapKit/MAMapKit.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import "HLGaoDeCoverAgeViewController.h"//图层VC
-@interface GaoDeToBaiDuMap ()<MAMapViewDelegate>
+#import <AMapSearchKit/AMapSearchKit.h>
+
+@interface GaoDeToBaiDuMap ()<MAMapViewDelegate,AMapSearchDelegate>
 @property (nonatomic, strong) MAMapView *mapView;
 @property (nonatomic,strong) UIButton * SinceTheRoadsBtn;//路况按钮
 @property (nonatomic,strong) UIButton * coverageBtn;//图层按钮
 @property (nonatomic,strong) UIButton * addBtn;//加号按钮
 @property (nonatomic,strong) UIButton * minusBtn;//减号按钮
-@property (nonatomic,assign) CGFloat zoom;
+@property (nonatomic,assign) CGFloat zoom;//缩放比例
+@property (nonatomic,strong) UIView * searchBackView;//搜索背景View
+@property (nonatomic,strong) UITextField * searchTextField;//搜索输入框
+@property (nonatomic,strong) UIButton * searchButton;//搜索按钮
+@property (nonatomic,strong)AMapSearchAPI * searchApi;//搜索对象
 @end
 
 @implementation GaoDeToBaiDuMap
@@ -49,6 +55,8 @@
     [self creatCoverageBtn];//图层按钮
     [self creatZoomBtn];//创建加减号按钮
     [self creatUserLocationBtn];//创建用户定位按钮
+    [self creatSearchAPI];
+    [self creatSearchView];//创建搜索框
 
 }
 
@@ -189,62 +197,78 @@
     }
 }
 
+#pragma mark - 创建搜索
 
-- (void)ShareBtnClick:(UIButton*)sender
+- (void)creatSearchAPI
 {
-    NSString*textToShare = @"ceshi 分享内容";
-    NSString* imageStr =@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525235722748&di=0ea8ea16b71ea50e8f848e1b9c275a1c&imgtype=0&src=http%3A%2F%2Fold.bz55.com%2Fuploads%2Fallimg%2F150210%2F139-150210134411-50.jpg";
-    UIImage*imageToShare = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageStr]]];
-    NSURL*urlToShare = [NSURL URLWithString:imageStr];
-    NSArray*activityItems =@[textToShare, imageToShare, urlToShare];
-    UIActivityViewController*activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
-    
-    //不出现在活动项目
-/*
- 
- UIKIT_EXTERN UIActivityType const UIActivityTypePostToFacebook     NS_AVAILABLE_IOS(6_0) __TVOS_PROHIBITED;
- UIKIT_EXTERN UIActivityType const UIActivityTypePostToTwitter      NS_AVAILABLE_IOS(6_0) __TVOS_PROHIBITED;
- UIKIT_EXTERN UIActivityType const UIActivityTypePostToWeibo        NS_AVAILABLE_IOS(6_0) __TVOS_PROHIBITED;    // SinaWeibo
- UIKIT_EXTERN UIActivityType const UIActivityTypeMessage            NS_AVAILABLE_IOS(6_0) __TVOS_PROHIBITED;
- UIKIT_EXTERN UIActivityType const UIActivityTypeMail               NS_AVAILABLE_IOS(6_0) __TVOS_PROHIBITED;
- UIKIT_EXTERN UIActivityType const UIActivityTypePrint              NS_AVAILABLE_IOS(6_0) __TVOS_PROHIBITED;
- UIKIT_EXTERN UIActivityType const UIActivityTypeCopyToPasteboard   NS_AVAILABLE_IOS(6_0) __TVOS_PROHIBITED;
- UIKIT_EXTERN UIActivityType const UIActivityTypeAssignToContact    NS_AVAILABLE_IOS(6_0) __TVOS_PROHIBITED;
- UIKIT_EXTERN UIActivityType const UIActivityTypeSaveToCameraRoll   NS_AVAILABLE_IOS(6_0) __TVOS_PROHIBITED;
- UIKIT_EXTERN UIActivityType const UIActivityTypeAddToReadingList   NS_AVAILABLE_IOS(7_0) __TVOS_PROHIBITED;
- UIKIT_EXTERN UIActivityType const UIActivityTypePostToFlickr       NS_AVAILABLE_IOS(7_0) __TVOS_PROHIBITED;
- UIKIT_EXTERN UIActivityType const UIActivityTypePostToVimeo        NS_AVAILABLE_IOS(7_0) __TVOS_PROHIBITED;
- UIKIT_EXTERN UIActivityType const UIActivityTypePostToTencentWeibo NS_AVAILABLE_IOS(7_0) __TVOS_PROHIBITED;
- UIKIT_EXTERN UIActivityType const UIActivityTypeAirDrop            NS_AVAILABLE_IOS(7_0) __TVOS_PROHIBITED;
- UIKIT_EXTERN UIActivityType const UIActivityTypeOpenInIBooks       NS_AVAILABLE_IOS(9_0) __TVOS_PROHIBITED;
- UIKIT_EXTERN UIActivityType const UIActivityTypeMarkupAsPDF        NS_AVAILABLE_IOS(11_0) __TVOS_PROHIBITED;
- */
+    self.searchApi = [[AMapSearchAPI alloc]init];
+    self.searchApi.delegate = self;
+    [AMapServices sharedServices].apiKey = AMapkey;
+}
 
+- (void)creatSearchView
+{
+    self.searchBackView = [UIView new];
+    [self.mapView addSubview:self.searchBackView];
+    self.searchBackView.backgroundColor = [UIColor whiteColor];
+    [self.searchBackView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(20);
+        make.height.mas_equalTo(50);
+        make.left.mas_equalTo(20);
+        make.right.mas_equalTo(-20);
+    }];
     
-//    activityVC.excludedActivityTypes=@[
-//                                       UIActivityTypePostToFacebook,
-//                                       UIActivityTypePostToTwitter,
-//                                       UIActivityTypePostToWeibo,
-//                                       UIActivityTypeMessage,
-//                                       UIActivityTypeMail,
-//                                       UIActivityTypePrint,
-//                                       UIActivityTypeCopyToPasteboard,
-//                                       UIActivityTypeAssignToContact,
-//                                       UIActivityTypeSaveToCameraRoll,
-//                                       UIActivityTypeAddToReadingList,
-//                                       UIActivityTypePostToFlickr,
-//                                       UIActivityTypePostToVimeo,
-//                                       UIActivityTypePostToTencentWeibo,
-//                                       UIActivityTypeAirDrop,
-//                                       UIActivityTypeOpenInIBooks,
-//                                       UIActivityTypeMarkupAsPDF
-//                                       ];
+    self.searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.searchBackView addSubview:self.searchButton];
+    [self.searchButton setBackgroundColor:KRandomColor];
+    [self.searchButton addTarget:self action:@selector(searchBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.searchButton setTitle:@"搜索" forState:UIControlStateNormal];
+    [self.searchButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.right.mas_equalTo(0);
+        make.width.mas_equalTo(80);
+    }];
     
-    [self presentViewController:activityVC animated:TRUE completion:nil];
-    //SLComposeViewController *shareVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
+    
+    self.searchTextField = [[UITextField alloc]init];
+    [self.searchBackView addSubview:self.searchTextField];
+    self.searchTextField.placeholder = @"请输入要搜索的地方";
+    [self.searchTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.bottom.mas_equalTo(0);
+        make.right.mas_equalTo(-80);
+    }];
+    
+
     
 }
 
+- (void)searchBtnClick:(UIButton *)sender
+{
+    if (!self.searchTextField.text || !self.searchTextField.text.length) {
+        NSLog(@"请输入关键字");
+        return;
+    }
+    
+    [self.searchTextField endEditing:YES];
+    
+    AMapPOIKeywordsSearchRequest * request = [AMapPOIKeywordsSearchRequest new];
+    request.keywords = self.searchTextField.text;
+    
+    [self.searchApi AMapPOIKeywordsSearch:request];
+    
+    
+}
+
+/* POI 搜索回调. */
+- (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response
+{
+    if (response.pois.count == 0)
+    {
+        return;
+    }
+ 
+    NSLog(@"request = %@,response = %@",request,response);
+    NSLog(@"response.pois = %@",response.pois);
+}
 
 
 
