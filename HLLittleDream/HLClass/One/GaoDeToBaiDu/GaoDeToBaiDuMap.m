@@ -243,12 +243,13 @@
 
 - (void)searchBtnClick:(UIButton *)sender
 {
+    [self.searchTextField endEditing:YES];
+    
     if (!self.searchTextField.text || !self.searchTextField.text.length) {
         NSLog(@"请输入关键字");
         return;
     }
     
-    [self.searchTextField endEditing:YES];
     
     AMapPOIKeywordsSearchRequest * request = [AMapPOIKeywordsSearchRequest new];
     request.keywords = self.searchTextField.text;
