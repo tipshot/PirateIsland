@@ -14,6 +14,9 @@
 @property (nonatomic, strong) MAMapView *mapView;
 @property (nonatomic,strong) UIButton * SinceTheRoadsBtn;//路况按钮
 @property (nonatomic,strong) UIButton * coverageBtn;//图层按钮
+@property (nonatomic,strong) UIButton * addBtn;//加号按钮
+@property (nonatomic,strong) UIButton * minusBtn;//减号按钮
+@property (nonatomic,assign) CGFloat zoom;
 @end
 
 @implementation GaoDeToBaiDuMap
@@ -22,10 +25,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"高德模仿百度地图";
+    self.zoom = 17.5;
     [self creatAndShowMap];
 }
 
-//创建并展示地图
+
+#pragma mark - 创建并展示地图
 - (void)creatAndShowMap
 {
     ///地图需要v4.5.0及以上版本才必须要打开此选项（v4.5.0以下版本，需要手动配置info.plist）
@@ -38,9 +43,12 @@
     }];
     self.mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.mapView.delegate = self;
-    [self.mapView setZoomLevel:17.5 animated:YES];
+    [_mapView setZoomLevel:17.5 animated:YES];
+    [self.mapView setZoomLevel:_zoom animated:YES];
     [self creatSinceTheRoads];//创建路况
     [self creatCoverageBtn];//图层按钮
+    [self creatZoomBtn];//创建加减号按钮
+    [self creatUserLocationBtn];//创建用户定位按钮
 
 }
 
@@ -52,7 +60,8 @@
     self.mapView.userTrackingMode = MAUserTrackingModeFollow;
 
 }
-//创建路况按钮
+
+#pragma mark - 创建路况按钮
 - (void)creatSinceTheRoads
 {
     self.SinceTheRoadsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -77,7 +86,8 @@
     self.mapView.showTraffic = sender.selected;
     
 }
-//创建图层按钮
+
+#pragma mark - 创建图层按钮
 - (void)creatCoverageBtn
 {
     self.coverageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -93,9 +103,10 @@
     [self.coverageBtn addTarget:self action:@selector(coverageBtnClick:) forControlEvents:UIControlEventTouchUpInside];
 
 }
+
 - (void)coverageBtnClick:(UIButton *)sender
 {
-    NSLog(@"%@",sender);
+    
     HLGaoDeCoverAgeViewController * coverAgeVC = [HLGaoDeCoverAgeViewController new];
     coverAgeVC.mapView = self.mapView;
     [self.navigationController presentViewController:coverAgeVC animated:YES completion:nil];
@@ -103,51 +114,90 @@
     
 }
 
+#pragma mark - 创建放大缩小按钮
 - (void)creatZoomBtn
 {
-    [_mapView setZoomLevel:17.5 animated:YES];
+    self.addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.mapView addSubview:self.addBtn];
+    [self.addBtn setBackgroundColor:KRandomColor];
+    [self.addBtn addTarget:self action:@selector(addBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.addBtn setTitle:@"+" forState:UIControlStateNormal];
+    [self.addBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-20);
+        make.top.mas_equalTo(self.coverageBtn.mas_bottom).offset(80);
+        make.width.height.mas_equalTo(30);
+    }];
+    
+    self.minusBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.mapView addSubview:self.minusBtn];
+    [self.minusBtn setBackgroundColor:KRandomColor];
+    [self.minusBtn addTarget:self action:@selector(minusBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.minusBtn setTitle:@"-" forState:UIControlStateNormal];
+    [self.minusBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-20);
+        make.top.mas_equalTo(self.addBtn.mas_bottom).offset(20);
+        make.width.height.mas_equalTo(30);
+    }];
+    
+}
+- (void)addBtnClick:(UIButton *)sender
+{
+    if (_zoom < 19) {
+        _zoom += 1;
+    }else{
+        
+    }
+    [self changeZoom];
+}
+
+- (void)minusBtnClick:(UIButton *)sender
+{
+    if (_zoom > 3) {
+        _zoom -= 1;
+    }
+    [self changeZoom];
+}
+
+- (void)changeZoom
+{
+    [self.mapView setZoomLevel:_zoom animated:YES];
+    
+}
+
+
+
+#pragma mark - 创建定位点
+- (void)creatUserLocationBtn
+{
+    UIButton * userLocationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.mapView addSubview:userLocationBtn];
+    [userLocationBtn setBackgroundColor:KRandomColor];
+    [userLocationBtn setTitle:@"定位" forState:UIControlStateNormal];
+    [userLocationBtn addTarget:self action:@selector(locationBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    userLocationBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+    [userLocationBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(-100);
+        make.left.mas_equalTo(30);
+        make.width.height.mas_equalTo(30);
+    }];
+}
+- (void)locationBtnClick:(UIButton *)sender
+{
+    if(self.mapView.userLocation.updating && self.mapView.userLocation.location) {
+        [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+        [sender setSelected:YES];
+    }
 }
 
 
 - (void)ShareBtnClick:(UIButton*)sender
-
 {
-    
-    //非空判断
-    
-//    if(!self.goodsInformationModel.name) {
-//
-//        UIAlertView* alertView = [[UIAlertViewalloc]initWithTitle:@"西门吸雪"message:@"请等待加载数据，亦或是后台没有数据，请稍后重试"delegate:nilcancelButtonTitle:nilotherButtonTitles:@"朕知道了",nil];[alertViewshow];
-//
-//        return;
-//
-//    }
-    
     NSString*textToShare = @"ceshi 分享内容";
-    
-    NSString* imageStr;
-    
-    //非空判断
-    
-//    if(!self.goodsInformationModel.image_default_id) {
-    
-        imageStr =@"https://upload-images.jianshu.io/upload_images/2208060-d753c69d336646ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/456";
-        
-//    }else{
-//
-//        imageStr = [self.goodsInformationModel.image_default_idobjectAtIndex:1];
-//
-//    }
-    
+    NSString* imageStr =@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525235722748&di=0ea8ea16b71ea50e8f848e1b9c275a1c&imgtype=0&src=http%3A%2F%2Fold.bz55.com%2Fuploads%2Fallimg%2F150210%2F139-150210134411-50.jpg";
     UIImage*imageToShare = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageStr]]];
-    
     NSURL*urlToShare = [NSURL URLWithString:imageStr];
-    
     NSArray*activityItems =@[textToShare, imageToShare, urlToShare];
-    
-    UIActivityViewController*activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems
-                                           
-                                                                          applicationActivities:nil];
+    UIActivityViewController*activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
     
     //不出现在活动项目
 /*
@@ -171,22 +221,24 @@
  */
 
     
-    activityVC.excludedActivityTypes=@[UIActivityTypePostToFacebook,
-                                       UIActivityTypePostToTwitter,
-                                       UIActivityTypePostToWeibo,
-                                       UIActivityTypeMessage,
-                                       UIActivityTypeMail,
-                                       UIActivityTypePrint,
-                                       UIActivityTypeCopyToPasteboard,
-                                       UIActivityTypeAssignToContact,
-                                       UIActivityTypeSaveToCameraRoll,
-                                       UIActivityTypeAddToReadingList,
-                                       UIActivityTypePostToFlickr,
-                                       UIActivityTypePostToVimeo,
-                                       UIActivityTypePostToTencentWeibo,
+//    activityVC.excludedActivityTypes=@[
+//                                       UIActivityTypePostToFacebook,
+//                                       UIActivityTypePostToTwitter,
+//                                       UIActivityTypePostToWeibo,
+//                                       UIActivityTypeMessage,
+//                                       UIActivityTypeMail,
+//                                       UIActivityTypePrint,
+//                                       UIActivityTypeCopyToPasteboard,
+//                                       UIActivityTypeAssignToContact,
+//                                       UIActivityTypeSaveToCameraRoll,
+//                                       UIActivityTypeAddToReadingList,
+//                                       UIActivityTypePostToFlickr,
+//                                       UIActivityTypePostToVimeo,
+//                                       UIActivityTypePostToTencentWeibo,
 //                                       UIActivityTypeAirDrop,
 //                                       UIActivityTypeOpenInIBooks,
-                                       UIActivityTypeMarkupAsPDF];
+//                                       UIActivityTypeMarkupAsPDF
+//                                       ];
     
     [self presentViewController:activityVC animated:TRUE completion:nil];
     //SLComposeViewController *shareVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
