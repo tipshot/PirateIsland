@@ -173,7 +173,6 @@
 }
 
 
-
 #pragma mark - 创建定位点
 - (void)creatUserLocationBtn
 {
@@ -262,13 +261,39 @@
 /* POI 搜索回调. */
 - (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response
 {
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    
     if (response.pois.count == 0)
     {
         return;
     }
- 
-    NSLog(@"request = %@,response = %@",request,response);
-    NSLog(@"response.pois = %@",response.pois);
+    
+    NSMutableArray *poiAnnotations = [NSMutableArray arrayWithCapacity:response.pois.count];
+    
+    [response.pois enumerateObjectsUsingBlock:^(AMapPOI *obj, NSUInteger idx, BOOL *stop) {
+        
+        [poiAnnotations addObject:obj];
+        
+    }];
+    
+    
+    /* 将结果以annotation的形式加载到地图上. */
+    [self.mapView addAnnotations:poiAnnotations];
+    
+    /* 如果只有一个结果，设置其为中心点. */
+    if (poiAnnotations.count == 1)
+    {
+        [self.mapView setCenterCoordinate:[poiAnnotations[0] coordinate]];
+    }
+    /* 如果有多个结果, 设置地图使所有的annotation都可见. */
+    else
+    {
+        [self.mapView showAnnotations:poiAnnotations.copy animated:NO];
+    }
+    
+    
+    
+    
 }
 
 
