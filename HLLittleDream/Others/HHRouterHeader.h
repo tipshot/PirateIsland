@@ -16,4 +16,5 @@
 
 #define GaoDeToBaiDuMapName @"GaoDeToBaiDuMap"
 #define HLPayVCName @"HLPayVC"
+#define HLMapSearchResultVCName @"HLMapSearchResultViewController"
 

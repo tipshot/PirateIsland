@@ -20,6 +20,7 @@
 		4EB2A8F32085FC4D00939D38 /* HLPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2A8F22085FC4D00939D38 /* HLPayVC.m */; };
 		4EB2A8F7208F21E600939D38 /* HLGaoDeCoverAgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2A8F5208F21E600939D38 /* HLGaoDeCoverAgeViewController.m */; };
 		4EB2A8F8208F21E600939D38 /* HLGaoDeCoverAgeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB2A8F6208F21E600939D38 /* HLGaoDeCoverAgeViewController.xib */; };
+		4EC396BF20AAB59B00CDC8B8 /* HLMapSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC396BE20AAB59B00CDC8B8 /* HLMapSearchResultViewController.m */; };
 		4ECB202B2071C2CA00102D02 /* HLLittleDreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB202A2071C2CA00102D02 /* HLLittleDreamTests.m */; };
 		4ECB20362071C2CA00102D02 /* HLLittleDreamUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB20352071C2CA00102D02 /* HLLittleDreamUITests.m */; };
 		4ECB20502071C32000102D02 /* HLLittleDream.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB20442071C32000102D02 /* HLLittleDream.xcdatamodeld */; };
@@ -85,6 +86,8 @@
 		4EB2A8F4208F21E600939D38 /* HLGaoDeCoverAgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLGaoDeCoverAgeViewController.h; sourceTree = "<group>"; };
 		4EB2A8F5208F21E600939D38 /* HLGaoDeCoverAgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLGaoDeCoverAgeViewController.m; sourceTree = "<group>"; };
 		4EB2A8F6208F21E600939D38 /* HLGaoDeCoverAgeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HLGaoDeCoverAgeViewController.xib; sourceTree = "<group>"; };
+		4EC396BD20AAB59B00CDC8B8 /* HLMapSearchResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLMapSearchResultViewController.h; sourceTree = "<group>"; };
+		4EC396BE20AAB59B00CDC8B8 /* HLMapSearchResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLMapSearchResultViewController.m; sourceTree = "<group>"; };
 		4ECB200B2071C2C900102D02 /* HLLittleDream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLLittleDream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECB201F2071C2CA00102D02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ECB20262071C2CA00102D02 /* HLLittleDreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLLittleDreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +180,8 @@
 				4E534ED4209080B200FD8609 /* HLMapTypeTableViewCell.h */,
 				4E534ED5209080B200FD8609 /* HLMapTypeTableViewCell.m */,
 				4E534ED6209080B200FD8609 /* HLMapTypeTableViewCell.xib */,
+				4EC396BD20AAB59B00CDC8B8 /* HLMapSearchResultViewController.h */,
+				4EC396BE20AAB59B00CDC8B8 /* HLMapSearchResultViewController.m */,
 			);
 			path = GaoDeToBaiDu;
 			sourceTree = "<group>";
@@ -567,6 +572,7 @@
 				4ECB20502071C32000102D02 /* HLLittleDream.xcdatamodeld in Sources */,
 				4EB2A8F7208F21E600939D38 /* HLGaoDeCoverAgeViewController.m in Sources */,
 				4E95E14C20720A6600E82B66 /* HLFourVC.m in Sources */,
+				4EC396BF20AAB59B00CDC8B8 /* HLMapSearchResultViewController.m in Sources */,
 				4ECB20872071D16000102D02 /* HLBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

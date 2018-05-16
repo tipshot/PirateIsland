@@ -255,7 +255,6 @@
     
     [self.searchApi AMapPOIKeywordsSearch:request];
     
-    
 }
 
 /* POI 搜索回调. */
@@ -276,20 +275,14 @@
         
     }];
     
-    
-    /* 将结果以annotation的形式加载到地图上. */
-    [self.mapView addAnnotations:poiAnnotations];
-    
     /* 如果只有一个结果，设置其为中心点. */
     if (poiAnnotations.count == 1)
     {
         [self.mapView setCenterCoordinate:[poiAnnotations[0] coordinate]];
     }
-    /* 如果有多个结果, 设置地图使所有的annotation都可见. */
-    else
-    {
-        [self.mapView showAnnotations:poiAnnotations.copy animated:NO];
-    }
+    
+    UIViewController * pushVC = [[HHRouter shared] matchController:HLMapSearchResultVCName];
+    [self.navigationController pushViewController:pushVC animated:YES];
     
     
     
