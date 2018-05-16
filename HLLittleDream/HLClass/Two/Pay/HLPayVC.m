@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = KRandomColor;
-    self.title = @"微信支付";
+    self.title = @"微信支付";//主干提交
 }
 
 - (void)didReceiveMemoryWarning {
