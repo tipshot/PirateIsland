@@ -9,7 +9,8 @@
 #import "HLPayVC.h"
 
 @interface HLPayVC ()
-
+@property (nonatomic,strong)UIButton * ALiPayBtn;
+@property (nonatomic,strong)UIButton * WeChatBtn;
 @end
 
 @implementation HLPayVC
@@ -18,22 +19,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = KRandomColor;
-    self.title = @"微信支付";//主干提交
+    self.title = @"支付宝、微信支付";//主干提交
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

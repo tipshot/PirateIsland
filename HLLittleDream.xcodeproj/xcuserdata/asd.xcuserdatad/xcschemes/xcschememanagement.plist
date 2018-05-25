@@ -7,7 +7,25 @@
 		<key>HLLittleDream.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>6</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>4ECB200A2071C2C900102D02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4ECB20252071C2CA00102D02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4ECB20302071C2CA00102D02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
