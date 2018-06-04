@@ -10,6 +10,7 @@
 #import "HLTabBarController.h"
 #import "HLHHRouter.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
+#import "YYFPSLabel.h"
 @interface AppDelegate ()
 
 @end
@@ -23,7 +24,19 @@
     [self addTabBar];
     [self HHRouter];
     [AMapServices sharedServices].apiKey = AMapkey;
+    [self creatYYFPSLabel];
     return YES;
+}
+- (void)creatYYFPSLabel
+{
+    YYFPSLabel * yyLabel = [[YYFPSLabel alloc]init];
+    yyLabel.font = [UIFont systemFontOfSize:13];
+    [self.window addSubview:yyLabel];
+    [yyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(24);
+        make.right.mas_equalTo(-10);
+        make.width.mas_equalTo(50);
+    }];
 }
 - (void)HHRouter
 {

@@ -11,6 +11,8 @@
 #import "HLPayVC.h"//支付页面
 #import "HLMapSearchResultViewController.h"//地图搜索页面
 @implementation HLHHRouter
+
+
 + (void)HHRouterMap
 {
     [[HHRouter shared] map:GaoDeToBaiDuMapName toControllerClass:[GaoDeToBaiDuMap class]];//使用高德地图仿照百度地图

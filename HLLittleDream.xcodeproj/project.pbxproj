@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E36152A20C4D03800F81477 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E36152820C4D03800F81477 /* YYFPSLabel.m */; };
+		4E36153120C4D2DA00F81477 /* UIView+HL_Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E36153020C4D2DA00F81477 /* UIView+HL_Frame.m */; };
 		4E534ED7209080B300FD8609 /* HLMapTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E534ED5209080B200FD8609 /* HLMapTypeTableViewCell.m */; };
 		4E534ED8209080B300FD8609 /* HLMapTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E534ED6209080B200FD8609 /* HLMapTypeTableViewCell.xib */; };
 		4E95E1432072003500E82B66 /* HLOneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E95E1422072003500E82B66 /* HLOneVC.m */; };
@@ -60,6 +62,10 @@
 
 /* Begin PBXFileReference section */
 		0F25D4545E84D8608C650937 /* libPods-HLLittleDream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HLLittleDream.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E36152820C4D03800F81477 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		4E36152920C4D03800F81477 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		4E36152F20C4D2DA00F81477 /* UIView+HL_Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+HL_Frame.h"; sourceTree = "<group>"; };
+		4E36153020C4D2DA00F81477 /* UIView+HL_Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+HL_Frame.m"; sourceTree = "<group>"; };
 		4E534ED4209080B200FD8609 /* HLMapTypeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLMapTypeTableViewCell.h; sourceTree = "<group>"; };
 		4E534ED5209080B200FD8609 /* HLMapTypeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLMapTypeTableViewCell.m; sourceTree = "<group>"; };
 		4E534ED6209080B200FD8609 /* HLMapTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HLMapTypeTableViewCell.xib; sourceTree = "<group>"; };
@@ -169,6 +175,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4E36152E20C4D26B00F81477 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				4E36152F20C4D2DA00F81477 /* UIView+HL_Frame.h */,
+				4E36153020C4D2DA00F81477 /* UIView+HL_Frame.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		4E95E1592072205100E82B66 /* GaoDeToBaiDu */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +244,7 @@
 		4ECB200D2071C2C900102D02 /* HLLittleDream */ = {
 			isa = PBXGroup;
 			children = (
+				4E36152E20C4D26B00F81477 /* Category */,
 				4ECB20582071C54E00102D02 /* Base */,
 				4ECB205A2071C54E00102D02 /* Main */,
 				4ECB205B2071C54F00102D02 /* Others */,
@@ -320,6 +336,8 @@
 		4ECB205A2071C54E00102D02 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				4E36152920C4D03800F81477 /* YYFPSLabel.h */,
+				4E36152820C4D03800F81477 /* YYFPSLabel.m */,
 				4ECB20732071CC9F00102D02 /* HLTabBarController.h */,
 				4ECB20742071CC9F00102D02 /* HLTabBarController.m */,
 				4ECB20762071CCC200102D02 /* HLNavigationController.h */,
@@ -554,8 +572,10 @@
 				4ECB20522071C32000102D02 /* ViewController.m in Sources */,
 				4E95E162207220B000E82B66 /* GaoDeToBaiDuMap.m in Sources */,
 				4ECB20662071CBDB00102D02 /* HLBaseTableViewController.m in Sources */,
+				4E36153120C4D2DA00F81477 /* UIView+HL_Frame.m in Sources */,
 				4E95E1432072003500E82B66 /* HLOneVC.m in Sources */,
 				4ECB20782071CCC200102D02 /* HLNavigationController.m in Sources */,
+				4E36152A20C4D03800F81477 /* YYFPSLabel.m in Sources */,
 				4ECB20552071C32000102D02 /* main.m in Sources */,
 				4ECB206F2071CC4000102D02 /* HLBaseTabBarController.m in Sources */,
 				4ECB20692071CBFB00102D02 /* HLBaseCollectionViewController.m in Sources */,

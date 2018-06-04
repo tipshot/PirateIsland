@@ -18,6 +18,7 @@
 #import "HLBaseTableView.h"
 #import "HLBaseView.h"
 #import "HHRouterHeader.h"
+#import "UIView+HL_Frame.h"
 
 #import <Masonry.h>
 #import <HHRouter/HHrouter.h>
