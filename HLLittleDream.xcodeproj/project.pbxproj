@@ -11,6 +11,10 @@
 		4E36153120C4D2DA00F81477 /* UIView+HL_Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E36153020C4D2DA00F81477 /* UIView+HL_Frame.m */; };
 		4E534ED7209080B300FD8609 /* HLMapTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E534ED5209080B200FD8609 /* HLMapTypeTableViewCell.m */; };
 		4E534ED8209080B300FD8609 /* HLMapTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E534ED6209080B200FD8609 /* HLMapTypeTableViewCell.xib */; };
+		4E8DD14920C7C5ED00C31309 /* HLTwoMultithreadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8DD14820C7C5ED00C31309 /* HLTwoMultithreadingViewController.m */; };
+		4E8DD14C20C7E37100C31309 /* HLThreadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8DD14B20C7E37100C31309 /* HLThreadVC.m */; };
+		4E8DD14F20C7E38400C31309 /* HLGCDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8DD14E20C7E38400C31309 /* HLGCDVC.m */; };
+		4E8DD15220C7E3A500C31309 /* HLNSOperationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8DD15120C7E3A500C31309 /* HLNSOperationVC.m */; };
 		4E95E1432072003500E82B66 /* HLOneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E95E1422072003500E82B66 /* HLOneVC.m */; };
 		4E95E14620720A4000E82B66 /* HLTwoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E95E14520720A4000E82B66 /* HLTwoVC.m */; };
 		4E95E14920720A5000E82B66 /* HLThreeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E95E14820720A5000E82B66 /* HLThreeVC.m */; };
@@ -69,6 +73,14 @@
 		4E534ED4209080B200FD8609 /* HLMapTypeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLMapTypeTableViewCell.h; sourceTree = "<group>"; };
 		4E534ED5209080B200FD8609 /* HLMapTypeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLMapTypeTableViewCell.m; sourceTree = "<group>"; };
 		4E534ED6209080B200FD8609 /* HLMapTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HLMapTypeTableViewCell.xib; sourceTree = "<group>"; };
+		4E8DD14720C7C5ED00C31309 /* HLTwoMultithreadingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLTwoMultithreadingViewController.h; sourceTree = "<group>"; };
+		4E8DD14820C7C5ED00C31309 /* HLTwoMultithreadingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLTwoMultithreadingViewController.m; sourceTree = "<group>"; };
+		4E8DD14A20C7E37100C31309 /* HLThreadVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLThreadVC.h; sourceTree = "<group>"; };
+		4E8DD14B20C7E37100C31309 /* HLThreadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLThreadVC.m; sourceTree = "<group>"; };
+		4E8DD14D20C7E38400C31309 /* HLGCDVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLGCDVC.h; sourceTree = "<group>"; };
+		4E8DD14E20C7E38400C31309 /* HLGCDVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLGCDVC.m; sourceTree = "<group>"; };
+		4E8DD15020C7E3A500C31309 /* HLNSOperationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLNSOperationVC.h; sourceTree = "<group>"; };
+		4E8DD15120C7E3A500C31309 /* HLNSOperationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLNSOperationVC.m; sourceTree = "<group>"; };
 		4E95E1402071FFB400E82B66 /* HL_PCH_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HL_PCH_Header.h; sourceTree = "<group>"; };
 		4E95E1412072003500E82B66 /* HLOneVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLOneVC.h; sourceTree = "<group>"; };
 		4E95E1422072003500E82B66 /* HLOneVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLOneVC.m; sourceTree = "<group>"; };
@@ -182,6 +194,21 @@
 				4E36153020C4D2DA00F81477 /* UIView+HL_Frame.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		4E8DD14620C7C5C600C31309 /* Multithreading */ = {
+			isa = PBXGroup;
+			children = (
+				4E8DD14720C7C5ED00C31309 /* HLTwoMultithreadingViewController.h */,
+				4E8DD14820C7C5ED00C31309 /* HLTwoMultithreadingViewController.m */,
+				4E8DD14A20C7E37100C31309 /* HLThreadVC.h */,
+				4E8DD14B20C7E37100C31309 /* HLThreadVC.m */,
+				4E8DD14D20C7E38400C31309 /* HLGCDVC.h */,
+				4E8DD14E20C7E38400C31309 /* HLGCDVC.m */,
+				4E8DD15020C7E3A500C31309 /* HLNSOperationVC.h */,
+				4E8DD15120C7E3A500C31309 /* HLNSOperationVC.m */,
+			);
+			path = Multithreading;
 			sourceTree = "<group>";
 		};
 		4E95E1592072205100E82B66 /* GaoDeToBaiDu */ = {
@@ -361,6 +388,7 @@
 				4E95E14420720A4000E82B66 /* HLTwoVC.h */,
 				4E95E14520720A4000E82B66 /* HLTwoVC.m */,
 				4EB2A8F02085FBD300939D38 /* Pay */,
+				4E8DD14620C7C5C600C31309 /* Multithreading */,
 			);
 			path = Two;
 			sourceTree = "<group>";
@@ -568,6 +596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E8DD14C20C7E37100C31309 /* HLThreadVC.m in Sources */,
 				4ECB20562071C32000102D02 /* AppDelegate.m in Sources */,
 				4ECB20522071C32000102D02 /* ViewController.m in Sources */,
 				4E95E162207220B000E82B66 /* GaoDeToBaiDuMap.m in Sources */,
@@ -585,13 +614,16 @@
 				4E95E14F20720E7700E82B66 /* HLBaseTableView.m in Sources */,
 				4EB2A8F32085FC4D00939D38 /* HLPayVC.m in Sources */,
 				4EB2A8E42085EF1300939D38 /* HLHHRouter.m in Sources */,
+				4E8DD14920C7C5ED00C31309 /* HLTwoMultithreadingViewController.m in Sources */,
 				4ECB206C2071CC2100102D02 /* HLBaseScrollView.m in Sources */,
 				4E95E14620720A4000E82B66 /* HLTwoVC.m in Sources */,
 				4E95E14920720A5000E82B66 /* HLThreeVC.m in Sources */,
+				4E8DD14F20C7E38400C31309 /* HLGCDVC.m in Sources */,
 				4ECB20722071CC5F00102D02 /* HLBaseNavigationController.m in Sources */,
 				4ECB20502071C32000102D02 /* HLLittleDream.xcdatamodeld in Sources */,
 				4EB2A8F7208F21E600939D38 /* HLGaoDeCoverAgeViewController.m in Sources */,
 				4E95E14C20720A6600E82B66 /* HLFourVC.m in Sources */,
+				4E8DD15220C7E3A500C31309 /* HLNSOperationVC.m in Sources */,
 				4EC396BF20AAB59B00CDC8B8 /* HLMapSearchResultViewController.m in Sources */,
 				4ECB20872071D16000102D02 /* HLBaseViewController.m in Sources */,
 			);
@@ -764,7 +796,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2P5FN2G9KC;
+				DEVELOPMENT_TEAM = 6N9M5S46W5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HLLittleDream/SupportFile/HLPrefixHeader.pch";
 				INFOPLIST_FILE = HLLittleDream/Info.plist;
@@ -785,7 +817,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2P5FN2G9KC;
+				DEVELOPMENT_TEAM = 6N9M5S46W5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HLLittleDream/SupportFile/HLPrefixHeader.pch";
 				INFOPLIST_FILE = HLLittleDream/Info.plist;

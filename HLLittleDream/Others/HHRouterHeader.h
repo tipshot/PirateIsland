@@ -17,4 +17,10 @@
 #define GaoDeToBaiDuMapName @"GaoDeToBaiDuMap"
 #define HLPayVCName @"HLPayVC"
 #define HLMapSearchResultVCName @"HLMapSearchResultViewController"
+#define HLMultithreadingVCName @"HLTwoMultithreadingViewController"
+
+#define HLThreadVCName @"HLThreadVC"
+#define HLGCDVCName @"HLGCDVC"
+#define HLNSOperationVCName @"HLNSOperationVC"
+
 

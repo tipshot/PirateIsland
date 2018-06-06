@@ -20,6 +20,9 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = KRandomColor;
     self.title = @"支付宝、微信支付";//主干提交
+
+    
+    
 }
 
 
