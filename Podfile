@@ -13,5 +13,6 @@ pod 'MJRefresh'
 pod 'AMap3DMap' #2D地图SDK (2D和3D不能同时使用)
 pod 'AMapSearch' #搜索功能
 pod 'WechatOpenSDK' #//微信支付
+pod 'Toast', '~> 4.0.0'
 
 end
