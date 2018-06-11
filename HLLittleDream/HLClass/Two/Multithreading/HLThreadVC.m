@@ -34,7 +34,25 @@
     
     
     self.dataArray = [NSArray arrayWithObjects:@"NSThread动态实例化(http)",@"NSThread静态实例化(https)",@"NSThread隐式实例化(http)", nil];
+    [self show];
 }
+
+
+
+-(void)show
+{
+//    [self.view makeToast:@"这就是你要显示的信息" duration:2 position:@"center"];
+//    [self.view makeToast:@"这就是你要显示的信息"];
+//    CSToastStyle * toaseStyle = [[CSToastStyle alloc]initWithDefaultStyle];
+//    [self.view makeToast:@"这就是你要显示的信息" duration:10 position:nil title:@"title" image:[UIImage imageNamed:@"a6efce1b9d16fdfa8bbfac72b88f8c5495ee7b5e"] style:toaseStyle completion:^(BOOL didTap) {
+//        NSLog(@"%d",didTap);
+//    }];
+    [self.view makeToast:@"简单的NSThread动态实例化(http)""NSThread静态实例化(https)""NSThread隐式实例化(http展示" duration:10 position:CSToastPositionCenter];
+    
+    
+}
+
+
 - (UIView *)creatHeaderView
 {
     self.headerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, KScreenWidth, 200.f)];
