@@ -8,8 +8,9 @@
 
 #import "HLGCDVC.h"
 
-@interface HLGCDVC ()
-
+@interface HLGCDVC ()<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic,strong)UITableView * GCDTavleView;
+@property (nonatomic,strong)NSArray * dataArray;
 @end
 
 @implementation HLGCDVC
@@ -17,7 +18,120 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.dataArray = [NSArray arrayWithObjects:@"并发队列-同步",@"并发队列-异步",@"串行队列-同步",@"串行队列-异步",@"", nil];
+    self.GCDTavleView = ({
+        _GCDTavleView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+        [self.view addSubview:_GCDTavleView];
+        [_GCDTavleView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(0);
+        }];
+        _GCDTavleView.delegate = self;
+        _GCDTavleView.dataSource = self;
+        _GCDTavleView;
+    });
 }
+
+#pragma mark - UITableViewDelegate,UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataArray.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    cell.textLabel.text = [self.dataArray objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.view makeToast:[self.dataArray objectAtIndex:indexPath.row]];
+    if (indexPath.row == 0) {
+        [self tableView0:tableView didSelectRowAtIndexPath:indexPath];
+    }
+}
+
+- (void)tableView0:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
