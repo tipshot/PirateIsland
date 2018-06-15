@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.dataArray = [NSArray arrayWithObjects:@"并发队列-同步",@"并发队列-异步",@"串行队列-同步",@"串行队列-异步",@"", nil];
+    self.dataArray = [NSArray arrayWithObjects:@"并发队列-异步",@"并发队列-同步",@"串行队列-异步",@"串行队列-同步",@"", nil];
     self.GCDTavleView = ({
         _GCDTavleView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         [self.view addSubview:_GCDTavleView];
@@ -58,37 +58,148 @@
         [self tableView0:tableView didSelectRowAtIndexPath:indexPath];
     }else if (indexPath.row == 1){
         [self tableView1:tableView didSelectRowAtIndexPath:indexPath];
+    }else if (indexPath.row == 2){
+        [self tableView2:tableView didSelectRowAtIndexPath:indexPath];
+    }else if (indexPath.row == 3){
+        [self tableView3:tableView didSelectRowAtIndexPath:indexPath];
     }
 }
 
-//同步-并发
+//并发队列-异步函数
 - (void)tableView0:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //先创建队列
+    NSLog(@"CONCURRENT_async_start");
+    //先创建并发队列
     dispatch_queue_t fistyQueue = dispatch_queue_create("test_asyncqueue", DISPATCH_QUEUE_CONCURRENT);
     
     dispatch_async(fistyQueue, ^{//异步函数
         for (int i = 0; i < 3; i ++) {
-            NSLog(@"1 -----> %@",[NSThread currentThread]);
+            NSLog(@"CONCURRENT - async - 1-%d -----> %@",i,[NSThread currentThread]);
         }
     });
 
-    dispatch_async(fistyQueue, ^{
-        for (int i = 0; i <2; i ++) {
-            NSLog(@"2 -----> %@",[NSThread currentThread]);
+    dispatch_async(fistyQueue, ^{//异步函数
+        for (int i = 0; i <3; i ++) {
+            NSLog(@"CONCURRENT - async - 2-%d -----> %@",i,[NSThread currentThread]);
         }
     });
     
-    //首先创建的是并发队列 DISPATCH_QUEUE_CONCURRENT。在异步函数里面执行，发现结果是按照顺序执行，可知道是
+    dispatch_async(fistyQueue, ^{//异步函数
+        for (int i = 0; i <3; i ++) {
+            NSLog(@"CONCURRENT - async - 3-%d -----> %@",i,[NSThread currentThread]);
+        }
+    });
+    NSLog(@"CONCURRENT_async_end");
+    //并发队列 异步函数 创建新的线程，但是是顺序执行，在新的线程里面执行，-但是测试发现一个新开的子线程里面最多存放十个任务。顺序执行
 }
 
-//并发-异步
+//并发队列-同步函数
 - (void)tableView1:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"CONCURRENT_sync_start");
+    //先创建并发队列
+    dispatch_queue_t fistyQueue = dispatch_queue_create("test_asyncqueue", DISPATCH_QUEUE_CONCURRENT);
+    
+    //创建同步函数
+    dispatch_sync(fistyQueue, ^{
+        for (int i = 0; i <13; i ++) {
+            NSLog(@"CONCURRENT - sync - 1-%d -----> %@",i,[NSThread currentThread]);
+        }
+    });
+    dispatch_sync(fistyQueue, ^{
+        for (int i = 0; i <13; i ++) {
+            NSLog(@"CONCURRENT - sync - 2-%d -----> %@",i,[NSThread currentThread]);
+        }
+    });
+    dispatch_sync(fistyQueue, ^{
+        for (int i = 0; i <13; i ++) {
+            NSLog(@"CONCURRENT - sync - 2-%d -----> %@",i,[NSThread currentThread]);
+        }
+    });
+    NSLog(@"CONCURRENT_sync_end");
+    //都在主线程中执行，没有开辟新的线程，多有的都在主线程中执行，因为是没有
+    
+
+    
     
 }
-
-
+//串行-异步
+- (void)tableView2:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"SERIAL_async_statr");
+    //创建串行队列
+    dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_SERIAL);
+    dispatch_async(queue, ^{
+        for (int i = 0; i <3; i ++) {
+            NSLog(@"SERIAL_async_1_%d_thread%@",i,[NSThread currentThread]);
+        }
+    });
+    dispatch_async(queue, ^{
+        for (int i = 0; i <3; i ++) {
+            NSLog(@"SERIAL_async_2_%d_thread%@",i,[NSThread currentThread]);
+        }
+    });
+    dispatch_async(queue, ^{
+        for (int i = 0; i <3; i ++) {
+            NSLog(@"SERIAL_async_3_%d_thread%@",i,[NSThread currentThread]);
+        }
+    });
+    NSLog(@"SERIAL_async_end");
+    //串行队列-异步函数 在子线程中顺序执行
+/*
+ 2018-06-15 17:35:20.380416+0800 HLLittleDream[1449:359136] SERIAL_async_statr
+ 2018-06-15 17:35:20.380955+0800 HLLittleDream[1449:359136] SERIAL_async_end
+ 2018-06-15 17:35:20.384832+0800 HLLittleDream[1449:359689] SERIAL_async_1_0_thread<NSThread: 0x1c0271a40>{number = 4, name = (null)}
+ 2018-06-15 17:35:20.384997+0800 HLLittleDream[1449:359689] SERIAL_async_1_1_thread<NSThread: 0x1c0271a40>{number = 4, name = (null)}
+ 2018-06-15 17:35:20.385139+0800 HLLittleDream[1449:359689] SERIAL_async_1_2_thread<NSThread: 0x1c0271a40>{number = 4, name = (null)}
+ 2018-06-15 17:35:20.385280+0800 HLLittleDream[1449:359689] SERIAL_async_2_0_thread<NSThread: 0x1c0271a40>{number = 4, name = (null)}
+ 2018-06-15 17:35:20.385412+0800 HLLittleDream[1449:359689] SERIAL_async_2_1_thread<NSThread: 0x1c0271a40>{number = 4, name = (null)}
+ 2018-06-15 17:35:20.385544+0800 HLLittleDream[1449:359689] SERIAL_async_2_2_thread<NSThread: 0x1c0271a40>{number = 4, name = (null)}
+ 2018-06-15 17:35:20.385681+0800 HLLittleDream[1449:359689] SERIAL_async_3_0_thread<NSThread: 0x1c0271a40>{number = 4, name = (null)}
+ 2018-06-15 17:35:20.387445+0800 HLLittleDream[1449:359689] SERIAL_async_3_1_thread<NSThread: 0x1c0271a40>{number = 4, name = (null)}
+ 2018-06-15 17:35:20.387681+0800 HLLittleDream[1449:359689] SERIAL_async_3_2_thread<NSThread: 0x1c0271a40>{number = 4, name = (null)}1
+ */
+    
+}
+//串行-同步
+- (void)tableView3:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"SERIAL_sync_statr");
+    //创建串行队列
+    dispatch_queue_t queue = dispatch_queue_create("chaunxing_tongbu", DISPATCH_QUEUE_SERIAL);
+    dispatch_sync(queue, ^{
+        for (int i = 0; i <3; i ++) {
+            NSLog(@"SERIAL_sync_1_%d_thread%@",i,[NSThread currentThread]);
+        }
+    });
+    dispatch_sync(queue, ^{
+        for (int i = 0; i <3; i ++) {
+            NSLog(@"SERIAL_sync_2_%d_thread%@",i,[NSThread currentThread]);
+        }
+    });
+    dispatch_sync(queue, ^{
+        for (int i = 0; i <3; i ++) {
+            NSLog(@"SERIAL_sync_3_%d_thread%@",i,[NSThread currentThread]);
+        }
+    });
+    NSLog(@"SERIAL_sync_end");
+    
+    //串行队列-同步函数 在主线程中执行 顺序执行任务-立马执行
+/*
+ 2018-06-15 17:33:01.697365+0800 HLLittleDream[1442:354557] SERIAL_sync_statr
+ 2018-06-15 17:33:01.698087+0800 HLLittleDream[1442:354557] SERIAL_sync_1_0_thread<NSThread: 0x1c0074780>{number = 1, name = main}
+ 2018-06-15 17:33:01.698487+0800 HLLittleDream[1442:354557] SERIAL_sync_1_1_thread<NSThread: 0x1c0074780>{number = 1, name = main}
+ 2018-06-15 17:33:01.698742+0800 HLLittleDream[1442:354557] SERIAL_sync_1_2_thread<NSThread: 0x1c0074780>{number = 1, name = main}
+ 2018-06-15 17:33:01.698992+0800 HLLittleDream[1442:354557] SERIAL_sync_2_0_thread<NSThread: 0x1c0074780>{number = 1, name = main}
+ 2018-06-15 17:33:01.699235+0800 HLLittleDream[1442:354557] SERIAL_sync_2_1_thread<NSThread: 0x1c0074780>{number = 1, name = main}
+ 2018-06-15 17:33:01.699474+0800 HLLittleDream[1442:354557] SERIAL_sync_2_2_thread<NSThread: 0x1c0074780>{number = 1, name = main}
+ 2018-06-15 17:33:01.699715+0800 HLLittleDream[1442:354557] SERIAL_sync_3_0_thread<NSThread: 0x1c0074780>{number = 1, name = main}
+ 2018-06-15 17:33:01.700048+0800 HLLittleDream[1442:354557] SERIAL_sync_3_1_thread<NSThread: 0x1c0074780>{number = 1, name = main}
+ 2018-06-15 17:33:01.701048+0800 HLLittleDream[1442:354557] SERIAL_sync_3_2_thread<NSThread: 0x1c0074780>{number = 1, name = main}
+ 2018-06-15 17:33:01.701191+0800 HLLittleDream[1442:354557] SERIAL_sync_end
+ */
+    
+}
 
 
 
