@@ -70,7 +70,7 @@
 {
     NSLog(@"CONCURRENT_async_start");
     //先创建并发队列
-    dispatch_queue_t fistyQueue = dispatch_queue_create("test_asyncqueue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t fistyQueue = dispatch_queue_create("test.asyncqueue", DISPATCH_QUEUE_CONCURRENT);
     
     dispatch_async(fistyQueue, ^{//异步函数
         for (int i = 0; i < 3; i ++) {
@@ -91,6 +91,21 @@
     });
     NSLog(@"CONCURRENT_async_end");
     //并发队列 异步函数 创建新的线程，但是是顺序执行，在新的线程里面执行，-但是测试发现一个新开的子线程里面最多存放十个任务。顺序执行
+    /*
+     2018-06-19 09:55:17.584433+0800 HLLittleDream[1577:629432] CONCURRENT_async_start
+     2018-06-19 09:55:17.584700+0800 HLLittleDream[1577:629432] CONCURRENT_async_end
+     2018-06-19 09:55:17.601072+0800 HLLittleDream[1577:629695] CONCURRENT - async - 1-0 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
+     2018-06-19 09:55:17.601387+0800 HLLittleDream[1577:629695] CONCURRENT - async - 1-1 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
+     2018-06-19 09:55:17.601866+0800 HLLittleDream[1577:629695] CONCURRENT - async - 1-2 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
+     2018-06-19 09:55:17.602143+0800 HLLittleDream[1577:629695] CONCURRENT - async - 2-0 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
+     2018-06-19 09:55:17.602389+0800 HLLittleDream[1577:629695] CONCURRENT - async - 2-1 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
+     2018-06-19 09:55:17.602627+0800 HLLittleDream[1577:629695] CONCURRENT - async - 2-2 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
+     2018-06-19 09:55:17.602883+0800 HLLittleDream[1577:629695] CONCURRENT - async - 3-0 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
+     2018-06-19 09:55:17.603498+0800 HLLittleDream[1577:629695] CONCURRENT - async - 3-1 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
+     2018-06-19 09:55:17.603735+0800 HLLittleDream[1577:629695] CONCURRENT - async - 3-2 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
+     */
+    
+    
 }
 
 //并发队列-同步函数
@@ -102,23 +117,35 @@
     
     //创建同步函数
     dispatch_sync(fistyQueue, ^{
-        for (int i = 0; i <13; i ++) {
+        for (int i = 0; i <3; i ++) {
             NSLog(@"CONCURRENT - sync - 1-%d -----> %@",i,[NSThread currentThread]);
         }
     });
     dispatch_sync(fistyQueue, ^{
-        for (int i = 0; i <13; i ++) {
+        for (int i = 0; i <3; i ++) {
             NSLog(@"CONCURRENT - sync - 2-%d -----> %@",i,[NSThread currentThread]);
         }
     });
     dispatch_sync(fistyQueue, ^{
-        for (int i = 0; i <13; i ++) {
+        for (int i = 0; i <3; i ++) {
             NSLog(@"CONCURRENT - sync - 2-%d -----> %@",i,[NSThread currentThread]);
         }
     });
     NSLog(@"CONCURRENT_sync_end");
-    //都在主线程中执行，没有开辟新的线程，多有的都在主线程中执行，因为是没有
-    
+    //都在主线程中执行，没有开辟新的线程，在主线程中顺序执行,立即执行。
+    /*
+     2018-06-19 09:52:04.799251+0800 HLLittleDream[1577:629432] CONCURRENT_sync_start
+     2018-06-19 09:52:04.800024+0800 HLLittleDream[1577:629432] CONCURRENT - sync - 1-0 -----> <NSThread: 0x1c0077400>{number = 1, name = main}
+     2018-06-19 09:52:04.800602+0800 HLLittleDream[1577:629432] CONCURRENT - sync - 1-1 -----> <NSThread: 0x1c0077400>{number = 1, name = main}
+     2018-06-19 09:52:04.800863+0800 HLLittleDream[1577:629432] CONCURRENT - sync - 1-2 -----> <NSThread: 0x1c0077400>{number = 1, name = main}
+     2018-06-19 09:52:04.801115+0800 HLLittleDream[1577:629432] CONCURRENT - sync - 2-0 -----> <NSThread: 0x1c0077400>{number = 1, name = main}
+     2018-06-19 09:52:04.801357+0800 HLLittleDream[1577:629432] CONCURRENT - sync - 2-1 -----> <NSThread: 0x1c0077400>{number = 1, name = main}
+     2018-06-19 09:52:04.801597+0800 HLLittleDream[1577:629432] CONCURRENT - sync - 2-2 -----> <NSThread: 0x1c0077400>{number = 1, name = main}
+     2018-06-19 09:52:04.801838+0800 HLLittleDream[1577:629432] CONCURRENT - sync - 2-0 -----> <NSThread: 0x1c0077400>{number = 1, name = main}
+     2018-06-19 09:52:04.802490+0800 HLLittleDream[1577:629432] CONCURRENT - sync - 2-1 -----> <NSThread: 0x1c0077400>{number = 1, name = main}
+     2018-06-19 09:52:04.802734+0800 HLLittleDream[1577:629432] CONCURRENT - sync - 2-2 -----> <NSThread: 0x1c0077400>{number = 1, name = main}
+     2018-06-19 09:52:04.802839+0800 HLLittleDream[1577:629432] CONCURRENT_sync_end
+     */
 
     
     
