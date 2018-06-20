@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.dataArray = [NSArray arrayWithObjects:@"并发队列-异步",@"并发队列-同步",@"串行队列-异步",@"串行队列-同步",@"", nil];
+    self.dataArray = [NSArray arrayWithObjects:@"并发队列-异步",@"并发队列-同步",@"串行队列-异步",@"串行队列-同步",@"主队列-异步",@"主队列-同步-相互等待-卡死闪退",@"全局队列-异步",@"线程间通讯", nil];
     self.GCDTavleView = ({
         _GCDTavleView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         [self.view addSubview:_GCDTavleView];
@@ -62,6 +62,14 @@
         [self tableView2:tableView didSelectRowAtIndexPath:indexPath];
     }else if (indexPath.row == 3){
         [self tableView3:tableView didSelectRowAtIndexPath:indexPath];
+    }else if (indexPath.row == 4){
+        [self tableView4:tableView didSelectRowAtIndexPath:indexPath];
+    }else if (indexPath.row == 5){
+        [self tableView5:tableView didSelectRowAtIndexPath:indexPath];
+    }else if (indexPath.row == 6){
+        [self tableView6:tableView didSelectRowAtIndexPath:indexPath];
+    }else if (indexPath.row == 7){
+        [self tableView7:tableView didSelectRowAtIndexPath:indexPath];
     }
 }
 
@@ -70,39 +78,39 @@
 {
     NSLog(@"CONCURRENT_async_start");
     //先创建并发队列
-    dispatch_queue_t fistyQueue = dispatch_queue_create("test.asyncqueue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queue = dispatch_queue_create("test.asyncqueue", DISPATCH_QUEUE_CONCURRENT);
     
-    dispatch_async(fistyQueue, ^{//异步函数
+    dispatch_async(queue, ^{//异步函数
         for (int i = 0; i < 3; i ++) {
             NSLog(@"CONCURRENT - async - 1-%d -----> %@",i,[NSThread currentThread]);
         }
     });
 
-    dispatch_async(fistyQueue, ^{//异步函数
+    dispatch_async(queue, ^{//异步函数
         for (int i = 0; i <3; i ++) {
             NSLog(@"CONCURRENT - async - 2-%d -----> %@",i,[NSThread currentThread]);
         }
     });
     
-    dispatch_async(fistyQueue, ^{//异步函数
+    dispatch_async(queue, ^{//异步函数
         for (int i = 0; i <3; i ++) {
             NSLog(@"CONCURRENT - async - 3-%d -----> %@",i,[NSThread currentThread]);
         }
     });
     NSLog(@"CONCURRENT_async_end");
-    //并发队列 异步函数 创建新的线程，但是是顺序执行，在新的线程里面执行，-但是测试发现一个新开的子线程里面最多存放十个任务。顺序执行
+    //并发队列 异步函数 创建新的线程，-但是测试发现一个新开的子线程里面最多存放十个任务。在start执行之后，后面的任务 包括end都是随机执行的顺序。
     /*
-     2018-06-19 09:55:17.584433+0800 HLLittleDream[1577:629432] CONCURRENT_async_start
-     2018-06-19 09:55:17.584700+0800 HLLittleDream[1577:629432] CONCURRENT_async_end
-     2018-06-19 09:55:17.601072+0800 HLLittleDream[1577:629695] CONCURRENT - async - 1-0 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
-     2018-06-19 09:55:17.601387+0800 HLLittleDream[1577:629695] CONCURRENT - async - 1-1 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
-     2018-06-19 09:55:17.601866+0800 HLLittleDream[1577:629695] CONCURRENT - async - 1-2 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
-     2018-06-19 09:55:17.602143+0800 HLLittleDream[1577:629695] CONCURRENT - async - 2-0 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
-     2018-06-19 09:55:17.602389+0800 HLLittleDream[1577:629695] CONCURRENT - async - 2-1 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
-     2018-06-19 09:55:17.602627+0800 HLLittleDream[1577:629695] CONCURRENT - async - 2-2 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
-     2018-06-19 09:55:17.602883+0800 HLLittleDream[1577:629695] CONCURRENT - async - 3-0 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
-     2018-06-19 09:55:17.603498+0800 HLLittleDream[1577:629695] CONCURRENT - async - 3-1 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
-     2018-06-19 09:55:17.603735+0800 HLLittleDream[1577:629695] CONCURRENT - async - 3-2 -----> <NSThread: 0x1c0665c00>{number = 3, name = (null)}
+     2018-06-20 09:15:38.548676+0800 HLLittleDream[3343:1158047] CONCURRENT_async_start
+     2018-06-20 09:15:38.548952+0800 HLLittleDream[3343:1158047] CONCURRENT_async_end
+     2018-06-20 09:15:38.558685+0800 HLLittleDream[3343:1159177] CONCURRENT - async - 1-0 -----> <NSThread: 0x1c4666180>{number = 10, name = (null)}
+     2018-06-20 09:15:38.559050+0800 HLLittleDream[3343:1159177] CONCURRENT - async - 1-1 -----> <NSThread: 0x1c4666180>{number = 10, name = (null)}
+     2018-06-20 09:15:38.559317+0800 HLLittleDream[3343:1159177] CONCURRENT - async - 1-2 -----> <NSThread: 0x1c4666180>{number = 10, name = (null)}
+     2018-06-20 09:15:38.559601+0800 HLLittleDream[3343:1159177] CONCURRENT - async - 2-0 -----> <NSThread: 0x1c4666180>{number = 10, name = (null)}
+     2018-06-20 09:15:38.559908+0800 HLLittleDream[3343:1159708] CONCURRENT - async - 3-0 -----> <NSThread: 0x1c4461d80>{number = 11, name = (null)}
+     2018-06-20 09:15:38.559978+0800 HLLittleDream[3343:1159177] CONCURRENT - async - 2-1 -----> <NSThread: 0x1c4666180>{number = 10, name = (null)}
+     2018-06-20 09:15:38.560196+0800 HLLittleDream[3343:1159708] CONCURRENT - async - 3-1 -----> <NSThread: 0x1c4461d80>{number = 11, name = (null)}
+     2018-06-20 09:15:38.561020+0800 HLLittleDream[3343:1159708] CONCURRENT - async - 3-2 -----> <NSThread: 0x1c4461d80>{number = 11, name = (null)}
+     2018-06-20 09:15:38.561304+0800 HLLittleDream[3343:1159177] CONCURRENT - async - 2-2 -----> <NSThread: 0x1c4666180>{number = 10, name = (null)}
      */
     
     
@@ -228,12 +236,96 @@
     
 }
 
+//主队列-异步
+- (void)tableView4:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSLog(@"mainQueeu_async_start");
+    
+    //创建主队列
+    dispatch_queue_t mainQueu = dispatch_get_main_queue();
+    dispatch_async(mainQueu, ^{
+        for (int i = 0; i < 2; ++i) {
+            NSLog(@"1------%@",[NSThread currentThread]);
+        }
+    });
+    dispatch_async(mainQueu, ^{
+        for (int i = 0; i < 2; ++i) {
+            NSLog(@"2------%@",[NSThread currentThread]);
+        }
+    });
+    dispatch_async(mainQueu, ^{
+        for (int i = 0; i < 2; ++i) {
+            NSLog(@"3------%@",[NSThread currentThread]);
+        }
+    });
+    
+    NSLog(@"mainQueeu_async_end");
+    //主队列-异步，再主队列中顺序执行，但是不是立马执行。
+    /*
+     2018-06-20 09:33:49.777205+0800 HLLittleDream[3359:1167278] mainQueeu_async_start
+     2018-06-20 09:33:49.777443+0800 HLLittleDream[3359:1167278] mainQueeu_async_end
+     2018-06-20 09:33:49.785933+0800 HLLittleDream[3359:1167278] 1------<NSThread: 0x1c4075a40>{number = 1, name = main}
+     2018-06-20 09:33:49.786284+0800 HLLittleDream[3359:1167278] 1------<NSThread: 0x1c4075a40>{number = 1, name = main}
+     2018-06-20 09:33:49.786563+0800 HLLittleDream[3359:1167278] 2------<NSThread: 0x1c4075a40>{number = 1, name = main}
+     2018-06-20 09:33:49.786811+0800 HLLittleDream[3359:1167278] 2------<NSThread: 0x1c4075a40>{number = 1, name = main}
+     2018-06-20 09:33:49.787061+0800 HLLittleDream[3359:1167278] 3------<NSThread: 0x1c4075a40>{number = 1, name = main}
+     2018-06-20 09:33:49.787296+0800 HLLittleDream[3359:1167278] 3------<NSThread: 0x1c4075a40>{number = 1, name = main}
 
+     */
+}
 
-
-
-
-
+//全局队列-同步-相互等待-卡死闪退
+- (void)tableView5:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"mainQueue_sync_start");
+    dispatch_queue_t mainQueue = dispatch_get_main_queue();
+    dispatch_sync(mainQueue, ^{
+        NSLog(@"%@",[NSThread currentThread]);
+    });
+    NSLog(@"mainQueue_sync_end");
+}
+    
+//全局队列-异步
+- (void)tableView6:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    dispatch_queue_t q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    // 2. 异步执行
+    for (int i = 0; i < 10; ++i) {
+        dispatch_async(q, ^{
+            NSLog(@"asyncGloba：%@ %d", [NSThread currentThread], i);
+        });
+    }
+    NSLog(@"come here");
+    
+    //开辟子线程，没有顺序执行。
+    
+}
+//线程间通讯
+- (void)tableView7:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //获取全局并发队列
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    //获取主队列
+    dispatch_queue_t mainQueue = dispatch_get_main_queue();
+    //在主线程中执行任务
+    dispatch_async(queue, ^{
+        NSLog(@"开始执行任务 - %@",[NSThread currentThread]);
+        [NSThread sleepForTimeInterval:2];//执行任务的时间-模拟
+        NSLog(@"任务执行结束 - %@",[NSThread currentThread]);
+        
+        ///回到主线程中刷新UI
+        dispatch_async(mainQueue, ^{
+            NSLog(@"UI开始刷新 - %@",[NSThread currentThread]);
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"UI刷新结束 - %@",[NSThread currentThread]);
+        });
+        
+    });
+    
+    
+}
 
 
 
