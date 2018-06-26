@@ -151,7 +151,10 @@
 }
 - (void)creatThread:(NSString *)url{
 
-    UIImage * image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
+    NSURL * Url = [NSURL URLWithString:url];
+    NSData * data = [NSData dataWithContentsOfURL:Url];
+    UIImage * image = [UIImage imageWithData:data];
+    NSLog(@"Url=%@_data=%@_image=%@",Url,data,image);
     if (image) {
         [self performSelectorOnMainThread:@selector(reloadImage:) withObject:image waitUntilDone:YES];//回到主线程刷新UI
     }

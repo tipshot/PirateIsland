@@ -14,9 +14,9 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - AMap3DMap (6.2.0):
+  - AMap3DMap (6.3.0):
     - AMapFoundation (~> 1.5)
-  - AMapFoundation (1.5.2)
+  - AMapFoundation (1.5.3)
   - AMapSearch (6.1.1):
     - AMapFoundation (~> 1.4)
   - FMDB (2.7.2):
@@ -24,11 +24,21 @@ PODS:
   - FMDB/standard (2.7.2)
   - HHRouter (0.1.9)
   - Masonry (1.1.0)
-  - MJExtension (3.0.15)
+  - MJExtension (3.0.15.1)
   - MJRefresh (3.1.15.3)
-  - SDWebImage (4.4.0):
-    - SDWebImage/Core (= 4.4.0)
-  - SDWebImage/Core (4.4.0)
+  - NerdyUI (1.2.1):
+    - NerdyUI/Chainable (= 1.2.1)
+    - NerdyUI/Private (= 1.2.1)
+    - NerdyUI/Public (= 1.2.1)
+  - NerdyUI/Chainable (1.2.1):
+    - NerdyUI/Private
+    - NerdyUI/Public
+  - NerdyUI/Private (1.2.1)
+  - NerdyUI/Public (1.2.1):
+    - NerdyUI/Private
+  - SDWebImage (4.4.1):
+    - SDWebImage/Core (= 4.4.1)
+  - SDWebImage/Core (4.4.1)
   - Toast (4.0.0)
   - WechatOpenSDK (1.8.2)
 
@@ -41,6 +51,7 @@ DEPENDENCIES:
   - Masonry
   - MJExtension
   - MJRefresh
+  - NerdyUI
   - SDWebImage
   - Toast (~> 4.0.0)
   - WechatOpenSDK
@@ -56,24 +67,26 @@ SPEC REPOS:
     - Masonry
     - MJExtension
     - MJRefresh
+    - NerdyUI
     - SDWebImage
     - Toast
     - WechatOpenSDK
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  AMap3DMap: 4170b8e1674883eefc068e277abf4dbaa9ea5f2d
-  AMapFoundation: 46b194013a3b06e0e82e8963108ceb972d4200b8
+  AMap3DMap: 1bb48f98ecb46682f145881692e7b06adcd06a93
+  AMapFoundation: 58f883c80754c659cf626deb3150936bfe8f1772
   AMapSearch: 3dcbf85c403a2a0fe0eda5318caabc272b31f5e1
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   HHRouter: c096524e95a07a1970e6e23a19ee5a9592dc326d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJExtension: 3f039575db1b135a20699ad298713b26acec1528
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
-  SDWebImage: b534502786e43dde36dfcaee89356fe6df30e203
+  NerdyUI: ae4506046b544a5cdc0873a58c1ece61b29631d0
+  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   WechatOpenSDK: 676feec516a11173eafd1fe64b10d27babf28701
 
-PODFILE CHECKSUM: 2e6e95cb1c84a7a3e6d02261ab570add43966a65
+PODFILE CHECKSUM: e50b92c5e3ab5a102819270d77647949d864b3e0
 
 COCOAPODS: 1.5.0.beta.1
