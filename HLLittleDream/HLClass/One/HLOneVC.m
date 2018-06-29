@@ -28,6 +28,7 @@
     // Do any additional setup after loading the view.
     [self creatTableView];
     self.hlTableView.tableFooterView = [UIView new];
+    log(100);
 }
 
 - (void)creatTableView
