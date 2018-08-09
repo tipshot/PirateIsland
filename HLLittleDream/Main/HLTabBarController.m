@@ -22,6 +22,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSMutableArray *arrShortcutItem = (NSMutableArray *)[UIApplication sharedApplication].shortcutItems;
+    
+    UIApplicationShortcutItem *shoreItem1 = [[UIApplicationShortcutItem alloc] initWithType:@"cn.damon.DM3DTouchDemo.openSearch" localizedTitle:@"标题1" localizedSubtitle:@"子标题" icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeSearch] userInfo:nil];
+    [arrShortcutItem addObject:shoreItem1];
+    
+    UIApplicationShortcutItem *shoreItem2 = [[UIApplicationShortcutItem alloc] initWithType:@"cn.damon.DM3DTouchDemo.openCompose" localizedTitle:@"标题2" localizedSubtitle:@"Subtitle" icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeCompose] userInfo:nil];
+    [arrShortcutItem addObject:shoreItem2];
+    
+    [UIApplication sharedApplication].shortcutItems = arrShortcutItem;
+    
+    
     [self addChild];
 }
 

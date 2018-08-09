@@ -25,6 +25,7 @@
     [self HHRouter];
     [AMapServices sharedServices].apiKey = AMapkey;
     [self creatYYFPSLabel];
+
     return YES;
 }
 - (void)creatYYFPSLabel
