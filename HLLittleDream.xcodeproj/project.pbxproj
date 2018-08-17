@@ -7,6 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E1078E5212668BA00051F4C /* AAJSFiles.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4E1078A6212668BA00051F4C /* AAJSFiles.bundle */; };
+		4E1078E6212668BA00051F4C /* AAAreaspline.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078A9212668BA00051F4C /* AAAreaspline.m */; };
+		4E1078E7212668BA00051F4C /* AALabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078AB212668BA00051F4C /* AALabels.m */; };
+		4E1078E8212668BA00051F4C /* AASeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078AE212668BA00051F4C /* AASeries.m */; };
+		4E1078E9212668BA00051F4C /* AAXAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078AF212668BA00051F4C /* AAXAxis.m */; };
+		4E1078EA212668BA00051F4C /* AAPlotOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078B1212668BA00051F4C /* AAPlotOptions.m */; };
+		4E1078EB212668BA00051F4C /* AADataLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078B2212668BA00051F4C /* AADataLabels.m */; };
+		4E1078EC212668BA00051F4C /* AALine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078B3212668BA00051F4C /* AALine.m */; };
+		4E1078ED212668BA00051F4C /* AATooltip.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078B6212668BA00051F4C /* AATooltip.m */; };
+		4E1078EE212668BA00051F4C /* AASubtitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078B8212668BA00051F4C /* AASubtitle.m */; };
+		4E1078EF212668BA00051F4C /* AAYAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078B9212668BA00051F4C /* AAYAxis.m */; };
+		4E1078F0212668BA00051F4C /* AACrosshair.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078BA212668BA00051F4C /* AACrosshair.m */; };
+		4E1078F1212668BA00051F4C /* AAColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078BF212668BA00051F4C /* AAColumn.m */; };
+		4E1078F2212668BA00051F4C /* AAPlotLinesElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078C0212668BA00051F4C /* AAPlotLinesElement.m */; };
+		4E1078F3212668BA00051F4C /* AAOptions3d.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078C2212668BA00051F4C /* AAOptions3d.m */; };
+		4E1078F4212668BA00051F4C /* AAStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078C4212668BA00051F4C /* AAStyle.m */; };
+		4E1078F5212668BA00051F4C /* AABar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078C5212668BA00051F4C /* AABar.m */; };
+		4E1078F6212668BA00051F4C /* AATitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078C6212668BA00051F4C /* AATitle.m */; };
+		4E1078F7212668BA00051F4C /* AAArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078C9212668BA00051F4C /* AAArea.m */; };
+		4E1078F8212668BA00051F4C /* AAAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078CA212668BA00051F4C /* AAAnimation.m */; };
+		4E1078F9212668BA00051F4C /* AALegend.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078CB212668BA00051F4C /* AALegend.m */; };
+		4E1078FA212668BA00051F4C /* AAMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078CD212668BA00051F4C /* AAMarker.m */; };
+		4E1078FB212668BA00051F4C /* AASpline.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078D1212668BA00051F4C /* AASpline.m */; };
+		4E1078FC212668BA00051F4C /* AAItemStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078D2212668BA00051F4C /* AAItemStyle.m */; };
+		4E1078FD212668BA00051F4C /* AAPie.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078D3212668BA00051F4C /* AAPie.m */; };
+		4E1078FE212668BA00051F4C /* AAChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078D9212668BA00051F4C /* AAChart.m */; };
+		4E1078FF212668BA00051F4C /* AAChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078DC212668BA00051F4C /* AAChartView.m */; };
+		4E107900212668BA00051F4C /* AAChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078DF212668BA00051F4C /* AAChartModel.m */; };
+		4E107901212668BA00051F4C /* AAOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078E1212668BA00051F4C /* AAOptions.m */; };
+		4E107902212668BA00051F4C /* AASeriesElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1078E2212668BA00051F4C /* AASeriesElement.m */; };
+		4E10790621266EDF00051F4C /* AAChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E10790521266EDF00051F4C /* AAChartViewController.m */; };
 		4E36152A20C4D03800F81477 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E36152820C4D03800F81477 /* YYFPSLabel.m */; };
 		4E36153120C4D2DA00F81477 /* UIView+HL_Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E36153020C4D2DA00F81477 /* UIView+HL_Frame.m */; };
 		4E534ED7209080B300FD8609 /* HLMapTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E534ED5209080B200FD8609 /* HLMapTypeTableViewCell.m */; };
@@ -66,6 +97,69 @@
 
 /* Begin PBXFileReference section */
 		0F25D4545E84D8608C650937 /* libPods-HLLittleDream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HLLittleDream.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E1078A6212668BA00051F4C /* AAJSFiles.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AAJSFiles.bundle; sourceTree = "<group>"; };
+		4E1078A8212668BA00051F4C /* AAArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAArea.h; sourceTree = "<group>"; };
+		4E1078A9212668BA00051F4C /* AAAreaspline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAAreaspline.m; sourceTree = "<group>"; };
+		4E1078AA212668BA00051F4C /* AATitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AATitle.h; sourceTree = "<group>"; };
+		4E1078AB212668BA00051F4C /* AALabels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AALabels.m; sourceTree = "<group>"; };
+		4E1078AC212668BA00051F4C /* AAStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAStyle.h; sourceTree = "<group>"; };
+		4E1078AD212668BA00051F4C /* AABar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AABar.h; sourceTree = "<group>"; };
+		4E1078AE212668BA00051F4C /* AASeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AASeries.m; sourceTree = "<group>"; };
+		4E1078AF212668BA00051F4C /* AAXAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAXAxis.m; sourceTree = "<group>"; };
+		4E1078B0212668BA00051F4C /* AAOptions3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAOptions3d.h; sourceTree = "<group>"; };
+		4E1078B1212668BA00051F4C /* AAPlotOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPlotOptions.m; sourceTree = "<group>"; };
+		4E1078B2212668BA00051F4C /* AADataLabels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AADataLabels.m; sourceTree = "<group>"; };
+		4E1078B3212668BA00051F4C /* AALine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AALine.m; sourceTree = "<group>"; };
+		4E1078B4212668BA00051F4C /* AAMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAMarker.h; sourceTree = "<group>"; };
+		4E1078B5212668BA00051F4C /* AALegend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AALegend.h; sourceTree = "<group>"; };
+		4E1078B6212668BA00051F4C /* AATooltip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AATooltip.m; sourceTree = "<group>"; };
+		4E1078B7212668BA00051F4C /* AAAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAAnimation.h; sourceTree = "<group>"; };
+		4E1078B8212668BA00051F4C /* AASubtitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AASubtitle.m; sourceTree = "<group>"; };
+		4E1078B9212668BA00051F4C /* AAYAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAYAxis.m; sourceTree = "<group>"; };
+		4E1078BA212668BA00051F4C /* AACrosshair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AACrosshair.m; sourceTree = "<group>"; };
+		4E1078BB212668BA00051F4C /* AAPie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPie.h; sourceTree = "<group>"; };
+		4E1078BC212668BA00051F4C /* AAItemStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAItemStyle.h; sourceTree = "<group>"; };
+		4E1078BD212668BA00051F4C /* AASpline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASpline.h; sourceTree = "<group>"; };
+		4E1078BE212668BA00051F4C /* AAChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAChart.h; sourceTree = "<group>"; };
+		4E1078BF212668BA00051F4C /* AAColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAColumn.m; sourceTree = "<group>"; };
+		4E1078C0212668BA00051F4C /* AAPlotLinesElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPlotLinesElement.m; sourceTree = "<group>"; };
+		4E1078C1212668BA00051F4C /* AAXAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAXAxis.h; sourceTree = "<group>"; };
+		4E1078C2212668BA00051F4C /* AAOptions3d.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAOptions3d.m; sourceTree = "<group>"; };
+		4E1078C3212668BA00051F4C /* AASeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASeries.h; sourceTree = "<group>"; };
+		4E1078C4212668BA00051F4C /* AAStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAStyle.m; sourceTree = "<group>"; };
+		4E1078C5212668BA00051F4C /* AABar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AABar.m; sourceTree = "<group>"; };
+		4E1078C6212668BA00051F4C /* AATitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AATitle.m; sourceTree = "<group>"; };
+		4E1078C7212668BA00051F4C /* AALabels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AALabels.h; sourceTree = "<group>"; };
+		4E1078C8212668BA00051F4C /* AAAreaspline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAAreaspline.h; sourceTree = "<group>"; };
+		4E1078C9212668BA00051F4C /* AAArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAArea.m; sourceTree = "<group>"; };
+		4E1078CA212668BA00051F4C /* AAAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAAnimation.m; sourceTree = "<group>"; };
+		4E1078CB212668BA00051F4C /* AALegend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AALegend.m; sourceTree = "<group>"; };
+		4E1078CC212668BA00051F4C /* AATooltip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AATooltip.h; sourceTree = "<group>"; };
+		4E1078CD212668BA00051F4C /* AAMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAMarker.m; sourceTree = "<group>"; };
+		4E1078CE212668BA00051F4C /* AALine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AALine.h; sourceTree = "<group>"; };
+		4E1078CF212668BA00051F4C /* AADataLabels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AADataLabels.h; sourceTree = "<group>"; };
+		4E1078D0212668BA00051F4C /* AAPlotOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPlotOptions.h; sourceTree = "<group>"; };
+		4E1078D1212668BA00051F4C /* AASpline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AASpline.m; sourceTree = "<group>"; };
+		4E1078D2212668BA00051F4C /* AAItemStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAItemStyle.m; sourceTree = "<group>"; };
+		4E1078D3212668BA00051F4C /* AAPie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPie.m; sourceTree = "<group>"; };
+		4E1078D4212668BA00051F4C /* AACrosshair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AACrosshair.h; sourceTree = "<group>"; };
+		4E1078D5212668BA00051F4C /* AAYAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAYAxis.h; sourceTree = "<group>"; };
+		4E1078D6212668BA00051F4C /* AASubtitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASubtitle.h; sourceTree = "<group>"; };
+		4E1078D7212668BA00051F4C /* AAPlotLinesElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPlotLinesElement.h; sourceTree = "<group>"; };
+		4E1078D8212668BA00051F4C /* AAColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAColumn.h; sourceTree = "<group>"; };
+		4E1078D9212668BA00051F4C /* AAChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAChart.m; sourceTree = "<group>"; };
+		4E1078DB212668BA00051F4C /* AAOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAOptions.h; sourceTree = "<group>"; };
+		4E1078DC212668BA00051F4C /* AAChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAChartView.m; sourceTree = "<group>"; };
+		4E1078DD212668BA00051F4C /* AAGlobalMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAGlobalMacro.h; sourceTree = "<group>"; };
+		4E1078DE212668BA00051F4C /* AASeriesElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AASeriesElement.h; sourceTree = "<group>"; };
+		4E1078DF212668BA00051F4C /* AAChartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAChartModel.m; sourceTree = "<group>"; };
+		4E1078E0212668BA00051F4C /* AAChartKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAChartKit.h; sourceTree = "<group>"; };
+		4E1078E1212668BA00051F4C /* AAOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAOptions.m; sourceTree = "<group>"; };
+		4E1078E2212668BA00051F4C /* AASeriesElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AASeriesElement.m; sourceTree = "<group>"; };
+		4E1078E3212668BA00051F4C /* AAChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAChartView.h; sourceTree = "<group>"; };
+		4E1078E4212668BA00051F4C /* AAChartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAChartModel.h; sourceTree = "<group>"; };
+		4E10790421266EDF00051F4C /* AAChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAChartViewController.h; sourceTree = "<group>"; };
+		4E10790521266EDF00051F4C /* AAChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAChartViewController.m; sourceTree = "<group>"; };
 		4E36152820C4D03800F81477 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		4E36152920C4D03800F81477 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		4E36152F20C4D2DA00F81477 /* UIView+HL_Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+HL_Frame.h"; sourceTree = "<group>"; };
@@ -185,6 +279,100 @@
 				7C20A69B74331DE864DFF258 /* Pods-HLLittleDream.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4E1078A5212668BA00051F4C /* AAChartKitLib */ = {
+			isa = PBXGroup;
+			children = (
+				4E1078A6212668BA00051F4C /* AAJSFiles.bundle */,
+				4E1078A7212668BA00051F4C /* AAOptionsModel */,
+				4E1078DA212668BA00051F4C /* AAChartConfiger */,
+			);
+			name = AAChartKitLib;
+			path = "../../../Downloads/AAChartKit-master/AAChartKitLib";
+			sourceTree = "<group>";
+		};
+		4E1078A7212668BA00051F4C /* AAOptionsModel */ = {
+			isa = PBXGroup;
+			children = (
+				4E1078A8212668BA00051F4C /* AAArea.h */,
+				4E1078A9212668BA00051F4C /* AAAreaspline.m */,
+				4E1078AA212668BA00051F4C /* AATitle.h */,
+				4E1078AB212668BA00051F4C /* AALabels.m */,
+				4E1078AC212668BA00051F4C /* AAStyle.h */,
+				4E1078AD212668BA00051F4C /* AABar.h */,
+				4E1078AE212668BA00051F4C /* AASeries.m */,
+				4E1078AF212668BA00051F4C /* AAXAxis.m */,
+				4E1078B0212668BA00051F4C /* AAOptions3d.h */,
+				4E1078B1212668BA00051F4C /* AAPlotOptions.m */,
+				4E1078B2212668BA00051F4C /* AADataLabels.m */,
+				4E1078B3212668BA00051F4C /* AALine.m */,
+				4E1078B4212668BA00051F4C /* AAMarker.h */,
+				4E1078B5212668BA00051F4C /* AALegend.h */,
+				4E1078B6212668BA00051F4C /* AATooltip.m */,
+				4E1078B7212668BA00051F4C /* AAAnimation.h */,
+				4E1078B8212668BA00051F4C /* AASubtitle.m */,
+				4E1078B9212668BA00051F4C /* AAYAxis.m */,
+				4E1078BA212668BA00051F4C /* AACrosshair.m */,
+				4E1078BB212668BA00051F4C /* AAPie.h */,
+				4E1078BC212668BA00051F4C /* AAItemStyle.h */,
+				4E1078BD212668BA00051F4C /* AASpline.h */,
+				4E1078BE212668BA00051F4C /* AAChart.h */,
+				4E1078BF212668BA00051F4C /* AAColumn.m */,
+				4E1078C0212668BA00051F4C /* AAPlotLinesElement.m */,
+				4E1078C1212668BA00051F4C /* AAXAxis.h */,
+				4E1078C2212668BA00051F4C /* AAOptions3d.m */,
+				4E1078C3212668BA00051F4C /* AASeries.h */,
+				4E1078C4212668BA00051F4C /* AAStyle.m */,
+				4E1078C5212668BA00051F4C /* AABar.m */,
+				4E1078C6212668BA00051F4C /* AATitle.m */,
+				4E1078C7212668BA00051F4C /* AALabels.h */,
+				4E1078C8212668BA00051F4C /* AAAreaspline.h */,
+				4E1078C9212668BA00051F4C /* AAArea.m */,
+				4E1078CA212668BA00051F4C /* AAAnimation.m */,
+				4E1078CB212668BA00051F4C /* AALegend.m */,
+				4E1078CC212668BA00051F4C /* AATooltip.h */,
+				4E1078CD212668BA00051F4C /* AAMarker.m */,
+				4E1078CE212668BA00051F4C /* AALine.h */,
+				4E1078CF212668BA00051F4C /* AADataLabels.h */,
+				4E1078D0212668BA00051F4C /* AAPlotOptions.h */,
+				4E1078D1212668BA00051F4C /* AASpline.m */,
+				4E1078D2212668BA00051F4C /* AAItemStyle.m */,
+				4E1078D3212668BA00051F4C /* AAPie.m */,
+				4E1078D4212668BA00051F4C /* AACrosshair.h */,
+				4E1078D5212668BA00051F4C /* AAYAxis.h */,
+				4E1078D6212668BA00051F4C /* AASubtitle.h */,
+				4E1078D7212668BA00051F4C /* AAPlotLinesElement.h */,
+				4E1078D8212668BA00051F4C /* AAColumn.h */,
+				4E1078D9212668BA00051F4C /* AAChart.m */,
+			);
+			path = AAOptionsModel;
+			sourceTree = "<group>";
+		};
+		4E1078DA212668BA00051F4C /* AAChartConfiger */ = {
+			isa = PBXGroup;
+			children = (
+				4E1078DB212668BA00051F4C /* AAOptions.h */,
+				4E1078DC212668BA00051F4C /* AAChartView.m */,
+				4E1078DD212668BA00051F4C /* AAGlobalMacro.h */,
+				4E1078DE212668BA00051F4C /* AASeriesElement.h */,
+				4E1078DF212668BA00051F4C /* AAChartModel.m */,
+				4E1078E0212668BA00051F4C /* AAChartKit.h */,
+				4E1078E1212668BA00051F4C /* AAOptions.m */,
+				4E1078E2212668BA00051F4C /* AASeriesElement.m */,
+				4E1078E3212668BA00051F4C /* AAChartView.h */,
+				4E1078E4212668BA00051F4C /* AAChartModel.h */,
+			);
+			path = AAChartConfiger;
+			sourceTree = "<group>";
+		};
+		4E10790321266EB400051F4C /* AAChart */ = {
+			isa = PBXGroup;
+			children = (
+				4E10790421266EDF00051F4C /* AAChartViewController.h */,
+				4E10790521266EDF00051F4C /* AAChartViewController.m */,
+			);
+			path = AAChart;
 			sourceTree = "<group>";
 		};
 		4E36152E20C4D26B00F81477 /* Category */ = {
@@ -355,6 +543,7 @@
 		4ECB20592071C54E00102D02 /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				4E1078A5212668BA00051F4C /* AAChartKitLib */,
 				4EB2A8E12085EF0000939D38 /* HHRouter */,
 			);
 			path = Third;
@@ -417,6 +606,7 @@
 				4E95E1412072003500E82B66 /* HLOneVC.h */,
 				4E95E1422072003500E82B66 /* HLOneVC.m */,
 				4E95E1592072205100E82B66 /* GaoDeToBaiDu */,
+				4E10790321266EB400051F4C /* AAChart */,
 			);
 			path = One;
 			sourceTree = "<group>";
@@ -530,6 +720,7 @@
 				4E534ED8209080B300FD8609 /* HLMapTypeTableViewCell.xib in Resources */,
 				4ECB20512071C32000102D02 /* Assets.xcassets in Resources */,
 				4ECB20532071C32000102D02 /* LaunchScreen.storyboard in Resources */,
+				4E1078E5212668BA00051F4C /* AAJSFiles.bundle in Resources */,
 				4EB2A8F8208F21E600939D38 /* HLGaoDeCoverAgeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,6 +787,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E1078EA212668BA00051F4C /* AAPlotOptions.m in Sources */,
+				4E1078E6212668BA00051F4C /* AAAreaspline.m in Sources */,
+				4E1078E9212668BA00051F4C /* AAXAxis.m in Sources */,
 				4E8DD14C20C7E37100C31309 /* HLThreadVC.m in Sources */,
 				4ECB20562071C32000102D02 /* AppDelegate.m in Sources */,
 				4ECB20522071C32000102D02 /* ViewController.m in Sources */,
@@ -605,26 +799,53 @@
 				4E95E1432072003500E82B66 /* HLOneVC.m in Sources */,
 				4ECB20782071CCC200102D02 /* HLNavigationController.m in Sources */,
 				4E36152A20C4D03800F81477 /* YYFPSLabel.m in Sources */,
+				4E1078FD212668BA00051F4C /* AAPie.m in Sources */,
+				4E1078E8212668BA00051F4C /* AASeries.m in Sources */,
+				4E107901212668BA00051F4C /* AAOptions.m in Sources */,
+				4E1078F5212668BA00051F4C /* AABar.m in Sources */,
+				4E1078FE212668BA00051F4C /* AAChart.m in Sources */,
+				4E1078F3212668BA00051F4C /* AAOptions3d.m in Sources */,
 				4ECB20552071C32000102D02 /* main.m in Sources */,
 				4ECB206F2071CC4000102D02 /* HLBaseTabBarController.m in Sources */,
 				4ECB20692071CBFB00102D02 /* HLBaseCollectionViewController.m in Sources */,
 				4ECB20752071CC9F00102D02 /* HLTabBarController.m in Sources */,
 				4E534ED7209080B300FD8609 /* HLMapTypeTableViewCell.m in Sources */,
 				4E95E15220720E8700E82B66 /* HLBaseView.m in Sources */,
+				4E1078FF212668BA00051F4C /* AAChartView.m in Sources */,
 				4E95E14F20720E7700E82B66 /* HLBaseTableView.m in Sources */,
+				4E1078EE212668BA00051F4C /* AASubtitle.m in Sources */,
+				4E1078F8212668BA00051F4C /* AAAnimation.m in Sources */,
+				4E107900212668BA00051F4C /* AAChartModel.m in Sources */,
+				4E10790621266EDF00051F4C /* AAChartViewController.m in Sources */,
+				4E1078F1212668BA00051F4C /* AAColumn.m in Sources */,
 				4EB2A8F32085FC4D00939D38 /* HLPayVC.m in Sources */,
+				4E1078F0212668BA00051F4C /* AACrosshair.m in Sources */,
+				4E1078FA212668BA00051F4C /* AAMarker.m in Sources */,
 				4EB2A8E42085EF1300939D38 /* HLHHRouter.m in Sources */,
+				4E1078F9212668BA00051F4C /* AALegend.m in Sources */,
 				4E8DD14920C7C5ED00C31309 /* HLTwoMultithreadingViewController.m in Sources */,
 				4ECB206C2071CC2100102D02 /* HLBaseScrollView.m in Sources */,
+				4E1078F6212668BA00051F4C /* AATitle.m in Sources */,
+				4E1078F7212668BA00051F4C /* AAArea.m in Sources */,
+				4E1078FB212668BA00051F4C /* AASpline.m in Sources */,
+				4E1078EB212668BA00051F4C /* AADataLabels.m in Sources */,
 				4E95E14620720A4000E82B66 /* HLTwoVC.m in Sources */,
+				4E1078F2212668BA00051F4C /* AAPlotLinesElement.m in Sources */,
 				4E95E14920720A5000E82B66 /* HLThreeVC.m in Sources */,
+				4E1078ED212668BA00051F4C /* AATooltip.m in Sources */,
+				4E1078FC212668BA00051F4C /* AAItemStyle.m in Sources */,
 				4E8DD14F20C7E38400C31309 /* HLGCDVC.m in Sources */,
 				4ECB20722071CC5F00102D02 /* HLBaseNavigationController.m in Sources */,
 				4ECB20502071C32000102D02 /* HLLittleDream.xcdatamodeld in Sources */,
+				4E1078EC212668BA00051F4C /* AALine.m in Sources */,
+				4E1078E7212668BA00051F4C /* AALabels.m in Sources */,
+				4E107902212668BA00051F4C /* AASeriesElement.m in Sources */,
 				4EB2A8F7208F21E600939D38 /* HLGaoDeCoverAgeViewController.m in Sources */,
 				4E95E14C20720A6600E82B66 /* HLFourVC.m in Sources */,
+				4E1078EF212668BA00051F4C /* AAYAxis.m in Sources */,
 				4E8DD15220C7E3A500C31309 /* HLNSOperationVC.m in Sources */,
 				4EC396BF20AAB59B00CDC8B8 /* HLMapSearchResultViewController.m in Sources */,
+				4E1078F4212668BA00051F4C /* AAStyle.m in Sources */,
 				4ECB20872071D16000102D02 /* HLBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

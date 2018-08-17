@@ -18,7 +18,7 @@
 - (NSMutableArray *)dataArray
 {
     if(!_dataArray){
-        _dataArray = [[NSMutableArray alloc]initWithObjects:@"用高德仿百度",@"微信",@"墨迹天气",@"网易新闻",@"天猫", nil ];
+        _dataArray = [[NSMutableArray alloc]initWithObjects:@"用高德仿百度",@"图表",@"微信",@"墨迹天气",@"网易新闻",@"天猫", nil ];
         
     }
     return _dataArray;
@@ -30,8 +30,28 @@
     self.hlTableView.tableFooterView = [UIView new];
     [self creatGifHraderRefresh];
     [self creatGifFooterRefresh];
+    [self isJailBreak];
 }
-
+- (BOOL)isJailBreak {
+    
+    NSArray *jailbreak_tool_paths = @[
+                                      @"/Applications/Cydia.app",
+                                      @"/Library/MobileSubstrate/MobileSubstrate.dylib",
+                                      @"/bin/bash",
+                                      @"/usr/sbin/sshd",
+                                      @"/etc/apt"
+                                      ];
+    
+    for (int i=0; i<jailbreak_tool_paths.count; i++) {
+        if ([[NSFileManager defaultManager] fileExistsAtPath:jailbreak_tool_paths[i]]) {
+            NSLog(@"The device is jail broken!");
+            [self.view makeToast:@"此设备已越狱" duration:1 position:CSToastPositionCenter];
+            return YES;
+        }
+    }
+    [self.view makeToast:@"此设备未越狱" duration:1 position:CSToastPositionCenter ];
+    return NO;
+}
 //Gif 动画刷新
 - (void)creatGifFooterRefresh{
 //    MJRefreshAutoGifFooter *header = [MJRefreshAutoGifFooter headerWithRefreshingTarget:self refreshingAction:@selector(request)];

@@ -14,6 +14,7 @@
 #import "HLThreadVC.h"//多线程
 #import "HLGCDVC.h"//多线程
 #import "HLNSOperationVC.h"//多线程
+#import "AAChartViewController.h"//图标工具
 @implementation HLHHRouter
 
 
@@ -26,5 +27,6 @@
     [[HHRouter shared] map:HLThreadVCName toControllerClass:[HLThreadVC class]];//Thread多线程
     [[HHRouter shared] map:HLGCDVCName toControllerClass:[HLGCDVC class]];//GCD多线程
     [[HHRouter shared] map:HLNSOperationVCName toControllerClass:[HLNSOperationVC class]];//NSOperation多线程
+    [[HHRouter shared] map:AAChartVCName toControllerClass:[AAChartViewController class]];//图表 工具
 }
 @end

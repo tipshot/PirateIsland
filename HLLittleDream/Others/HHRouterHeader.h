@@ -22,5 +22,6 @@
 #define HLThreadVCName @"HLThreadVC"
 #define HLGCDVCName @"HLGCDVC"
 #define HLNSOperationVCName @"HLNSOperationVC"
+#define AAChartVCName @"AAChartVC"
 
 
